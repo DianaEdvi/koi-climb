@@ -4,37 +4,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+/**
+ * Moves the koi fish 
+ */
 public class Movement : MonoBehaviour
 {
 
-    private Transform _position;
-    private Vector3 _origin;
-    private float _angle;
-    [SerializeField] private float speed = 0.05f;
-    [SerializeField] private float startAngle;
-    [SerializeField] private float radius = 2;
+    private Transform _position; // the koi's position
+    private Vector3 _origin; // the point to circle around
+    private float _angle; // the current angle around the circle 
+    [SerializeField] private float startAngle; // the start angle
+    private KoiProperties _koiProperties; // general properties for both koi 
     
     // Start is called before the first frame update
     void Start()
     {
+        // Set variables 
         _position = transform;
         _origin = new Vector3(0,0,0);
         _angle += startAngle;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("space"))
-        {
-            speed *= -1;
-        }
-
+        _koiProperties = GetComponentInParent<KoiProperties>();
     }
 
     private void FixedUpdate()
     {
-        _angle += speed;
-        _position.position = new Vector3(_origin.x + radius * Mathf.Cos(_angle), _origin.y + radius * Mathf.Sin(_angle), 0);
+        // Perform rotation
+        _angle += _koiProperties.SpinSpeed;
+        _position.localPosition = new Vector3(_origin.x + _koiProperties.Radius * Mathf.Cos(_angle), _origin.y + _koiProperties.Radius * Mathf.Sin(_angle), 0);
+        
+        // Move both koi upwards 
+        // Also Move koi left and right depending on input 
+        var koiPositions = _koiProperties.transform.position;
+        _koiProperties.transform.position = new Vector3(koiPositions.x + _koiProperties.Direction * _koiProperties.SideSpeed, koiPositions.y + _koiProperties.RiseSpeed, koiPositions.z);
+        
     }
 }
