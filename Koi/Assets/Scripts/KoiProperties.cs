@@ -48,6 +48,7 @@ public class KoiProperties : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // This is kind of ass and needs to be reworked. i want controller support as well
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             SpinSpeed = Mathf.Abs(SpinSpeed);
