@@ -48,11 +48,25 @@ public class KoiProperties : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            SpinSpeed *= -1;
+            SpinSpeed = Mathf.Abs(SpinSpeed);
         }
-
-        _direction = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SpinSpeed = Mathf.Abs(SpinSpeed) * -1;
+        } 
+        
+        if (Input.GetKey(KeyCode.A))
+        {
+            _direction = -1;
+            return;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            _direction = 1;
+            return;
+        }
+        _direction = 0;
     }
 }
