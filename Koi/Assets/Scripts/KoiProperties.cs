@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 /**
- * Sets general properties for the koi fish and handles user input 
+ * Sets movement properties for the player  
  */
 public class KoiProperties : MonoBehaviour
 {
@@ -42,32 +42,5 @@ public class KoiProperties : MonoBehaviour
     {
         get => sideSpeed;
         set => sideSpeed = value;
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        // This is kind of ass and needs to be reworked. i want controller support as well
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            SpinSpeed = Mathf.Abs(SpinSpeed);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            SpinSpeed = Mathf.Abs(SpinSpeed) * -1;
-        } 
-        
-        if (Input.GetKey(KeyCode.A))
-        {
-            _direction = -1;
-            return;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            _direction = 1;
-            return;
-        }
-        _direction = 0;
     }
 }
