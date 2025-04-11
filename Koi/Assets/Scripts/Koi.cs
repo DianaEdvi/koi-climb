@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 /**
  * Sets movement properties for the player  
  */
-public class KoiProperties : MonoBehaviour
+public class Koi : MonoBehaviour
 {
     [SerializeField] private float riseSpeed = 0.05f;
     [SerializeField] private float spinSpeed = 0.05f;

@@ -5,13 +5,13 @@ using UnityEngine;
 /**
  * Handles all the inputs 
  */
-public class InputManager : MonoBehaviour
+public class Inputs : MonoBehaviour
 {
-    private KoiProperties _koiProperties;
+    private Koi _koi;
     // Start is called before the first frame update
     void Start()
     {
-        _koiProperties = GameObject.FindGameObjectWithTag("Player").GetComponent<KoiProperties>();
+        _koi = GameObject.FindGameObjectWithTag("Player").GetComponent<Koi>();
     }
 
     // Update is called once per frame
@@ -20,25 +20,25 @@ public class InputManager : MonoBehaviour
         // This is kind of ass and needs to be reworked. i want controller support as well
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            _koiProperties.SpinSpeed = Mathf.Abs(_koiProperties.SpinSpeed);
-            _koiProperties.IsFlipped = false;
+            _koi.SpinSpeed = Mathf.Abs(_koi.SpinSpeed);
+            _koi.IsFlipped = false;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            _koiProperties.SpinSpeed = Mathf.Abs(_koiProperties.SpinSpeed) * -1;
-            _koiProperties.IsFlipped = true;
+            _koi.SpinSpeed = Mathf.Abs(_koi.SpinSpeed) * -1;
+            _koi.IsFlipped = true;
         } 
         
         if (Input.GetKey(KeyCode.A))
         {
-            _koiProperties.Direction = -1;
+            _koi.Direction = -1;
             return;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            _koiProperties.Direction = 1;
+            _koi.Direction = 1;
             return;
         }
-        _koiProperties.Direction = 0;
+        _koi.Direction = 0;
     }
 }
