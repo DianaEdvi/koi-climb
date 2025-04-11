@@ -41,6 +41,7 @@ public class Movement : MonoBehaviour
         _koi.transform.position = new Vector3(koiPositions.x + _koi.Direction * _koi.SideSpeed, koiPositions.y + _koi.RiseSpeed, koiPositions.z);
     }
 
+    // Applies specific movements that are unique to each creature 
     // ReSharper disable Unity.PerformanceAnalysis
     private void MovementSpecifics(string creature)
     {

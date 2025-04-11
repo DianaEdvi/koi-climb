@@ -11,16 +11,14 @@ using UnityEngine.Serialization;
 public class Events : MonoBehaviour
 { 
     public UnityEvent onActivateDragon;
-    // create one for collectibles 
-    // create one for destructibles 
+    public UnityEvent<string> onHit;
         
         // Start is called before the first frame update
     void Start()
     {
-        if (onActivateDragon == null)
-        {
-            onActivateDragon = new UnityEvent();
-        }
+        // Create events if not null
+        onActivateDragon ??= new UnityEvent();
+        onHit ??= new UnityEvent<string>();
     }
 
     // Update is called once per frame

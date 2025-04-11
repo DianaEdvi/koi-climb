@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 /**
  * Binds the player to the confines of the background 
  */
-public class BoundToBackground : MonoBehaviour
+public class Borders : MonoBehaviour
 {
 
     private GameObject _koi; 
