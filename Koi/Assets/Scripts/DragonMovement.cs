@@ -29,5 +29,11 @@ public class DragonMovement : MonoBehaviour
         
     }
 
+    private void Fireballs()
+    {
+           
+        
+    }
+
     
 }

@@ -14,6 +14,7 @@ public class KoiProperties : MonoBehaviour
     [SerializeField] private float sideSpeed = 0.05f;
     [SerializeField] private float radius = 2;
     private float _direction;
+    private bool isFlipped = false;
     
     public float RiseSpeed
     {
@@ -42,5 +43,11 @@ public class KoiProperties : MonoBehaviour
     {
         get => sideSpeed;
         set => sideSpeed = value;
+    }
+
+    public bool IsFlipped
+    {
+        get => isFlipped;
+        set => isFlipped = value;
     }
 }

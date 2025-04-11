@@ -21,10 +21,12 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _koiProperties.SpinSpeed = Mathf.Abs(_koiProperties.SpinSpeed);
+            _koiProperties.IsFlipped = false;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _koiProperties.SpinSpeed = Mathf.Abs(_koiProperties.SpinSpeed) * -1;
+            _koiProperties.IsFlipped = true;
         } 
         
         if (Input.GetKey(KeyCode.A))

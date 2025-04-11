@@ -14,7 +14,9 @@ public class Movement : MonoBehaviour
     private Vector3 _origin; // the point to circle around
     private float _angle; // the current angle around the circle 
     [SerializeField] private float startAngle; // the start angle
+    [SerializeField] private float startRotation; // the start angle
     private KoiProperties _koiProperties; // general properties for both koi 
+    private int _rotation = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -32,8 +34,10 @@ public class Movement : MonoBehaviour
         _angle += _koiProperties.SpinSpeed;
         _position.localPosition = new Vector3(_origin.x + _koiProperties.Radius * Mathf.Cos(_angle), _origin.y + _koiProperties.Radius * Mathf.Sin(_angle), 0);
         
-        // Move both koi upwards 
-        // Also Move koi left and right depending on input 
+        // Apply spin on Z rotation to stay in the circle 
+        transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + _koiProperties.SpinSpeed * Mathf.Rad2Deg);
+        
+        // Move both koi upwards and move koi left and right depending on input 
         var koiPositions = _koiProperties.transform.position;
         _koiProperties.transform.position = new Vector3(koiPositions.x + _koiProperties.Direction * _koiProperties.SideSpeed, koiPositions.y + _koiProperties.RiseSpeed, koiPositions.z);
         
