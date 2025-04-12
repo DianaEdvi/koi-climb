@@ -7,7 +7,10 @@ public class Triggers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _events = GameObject.Find("Game").GetComponent<Events>();
+        if (GameObject.Find("Game"))
+        {
+            _events = GameObject.Find("Game").GetComponent<Events>();
+        }
     }
     
     /**
