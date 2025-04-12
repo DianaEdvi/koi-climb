@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Triggers : MonoBehaviour
@@ -32,10 +29,18 @@ public class Triggers : MonoBehaviour
         // if it's an obstacle, reset to the beginning of the level 
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            if (_events != null && _events.onHit != null)
+            if (gameObject.CompareTag("Fireball"))
+            {
+                Debug.Log("cllision");
+                other.gameObject.SetActive(false);
+            }
+            else if (_events != null && _events.onHit != null)
             {
                 _events.onHit?.Invoke(other.gameObject.tag);
             }
+            
+            
+
           
         }
     }

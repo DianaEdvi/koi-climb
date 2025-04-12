@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectible
   - Obstacle
+  - Fireball
   layers:
   - Default
   - TransparentFX
