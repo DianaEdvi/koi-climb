@@ -10,6 +10,8 @@ public class Inputs : MonoBehaviour
     private Koi _koi;
     private ExplodeTheSun _explodeTheSun;
     private Events _events;
+    [SerializeField] private GameObject dragon;
+    private Spawner _spawner;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class Inputs : MonoBehaviour
         _koi = GameObject.FindGameObjectWithTag("Player").GetComponent<Koi>();
         _events = GameObject.Find("Game").GetComponent<Events>();
         _explodeTheSun = GameObject.Find("Game").GetComponent<ExplodeTheSun>();
+        _spawner = dragon.GetComponentInChildren<Spawner>();
 
     }
 
@@ -48,14 +51,24 @@ public class Inputs : MonoBehaviour
         _koi.Direction = 0;
 
         // Space is for the dragon stuff 
-        if (Input.GetKeyDown(KeyCode.Space) && _explodeTheSun.ReadyToExplode) // i think this needs to be changed to false right after the space in order to allow for future space presses for fireballs
+        if (Input.GetKeyDown(KeyCode.Space)) // i think this needs to be changed to false right after the space in order to allow for future space presses for fireballs
         {
-            if (_events != null && _events.onDragonTime != null)
+            // first check if dragon is already active before firing
+            if (dragon.activeSelf)
             {
-              _events.onDragonTime?.Invoke();   
+                _spawner.Launch = true;
+                // Debug.Log("shoot fireballs");
+            }
+            
+            // activate dragon
+            if (_explodeTheSun.ReadyToExplode)
+            {
+                if (_events != null && _events.onDragonTime != null)
+                {
+                  _events.onDragonTime?.Invoke();   
+                }
             }
         }
-
     }
 
 }
