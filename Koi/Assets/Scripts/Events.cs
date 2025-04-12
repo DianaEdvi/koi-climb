@@ -10,15 +10,17 @@ using UnityEngine.Serialization;
  */
 public class Events : MonoBehaviour
 { 
-    public UnityEvent onActivateDragon;
+    public UnityEvent onActivateSun;
+    public UnityEvent onDragonTime;
     public UnityEvent<string> onHit;
         
         // Start is called before the first frame update
     void Start()
     {
         // Create events if not null
-        onActivateDragon ??= new UnityEvent();
+        onActivateSun ??= new UnityEvent();
         onHit ??= new UnityEvent<string>();
+        onDragonTime ??= new UnityEvent();
     }
 
     // Update is called once per frame

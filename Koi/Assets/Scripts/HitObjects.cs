@@ -13,30 +13,30 @@ public class HitObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Find objects
         _events = GameObject.Find("Game").GetComponent<Events>();
-        _events.onHit.AddListener(Hit);
         _sun = GameObject.Find("Sun").GetComponent<SpriteRenderer>();
         _collectibles = GameObject.FindGameObjectsWithTag("Collectible");
         _koi = GameObject.FindGameObjectWithTag("Player").GetComponent<Koi>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
+        // Add listeners
+        _events.onHit.AddListener(Hit);
     }
 
+    /**
+     * Handles the logic when a triggerable object (collectibles, obstacles) are interacted with 
+     */
     private void Hit(string type)
     {
         switch (type)
         {
             case "Collectible":
-                //increase alpha
+                //increase alpha and activate the sun
                 var sunColor = _sun.color;
                 _sun.color = new Color(sunColor.r, sunColor.g, sunColor.b, sunColor.a + 0.5f);
-                if (_sun.color.a >= 1 && _events != null && _events.onActivateDragon != null)
+                if (_sun.color.a >= 1 && _events != null && _events.onActivateSun != null)
                 {
-                    _events.onActivateDragon?.Invoke();
+                    _events.onActivateSun?.Invoke();
                 }
                 break;
             case "Obstacle":

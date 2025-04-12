@@ -8,10 +8,16 @@ using UnityEngine;
 public class Inputs : MonoBehaviour
 {
     private Koi _koi;
+    private ExplodeTheSun _explodeTheSun;
+    private Events _events;
+    
     // Start is called before the first frame update
     void Start()
     {
         _koi = GameObject.FindGameObjectWithTag("Player").GetComponent<Koi>();
+        _events = GameObject.Find("Game").GetComponent<Events>();
+        _explodeTheSun = GameObject.Find("Game").GetComponent<ExplodeTheSun>();
+
     }
 
     // Update is called once per frame
@@ -40,5 +46,16 @@ public class Inputs : MonoBehaviour
             return;
         }
         _koi.Direction = 0;
+
+        // Space is for the dragon stuff 
+        if (Input.GetKeyDown(KeyCode.Space) && _explodeTheSun.ReadyToExplode) // i think this needs to be changed to false right after the space in order to allow for future space presses for fireballs
+        {
+            if (_events != null && _events.onDragonTime != null)
+            {
+              _events.onDragonTime?.Invoke();   
+            }
+        }
+
     }
+
 }
