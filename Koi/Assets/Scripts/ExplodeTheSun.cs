@@ -17,12 +17,16 @@ public class ExplodeTheSun : MonoBehaviour
 
     public bool ReadyToExplode => _readyToExplode;
     
+    
     // Start is called before the first frame update
     void Start()
     {
-        _sun = GameObject.Find("Sun").GetComponent<SpriteRenderer>();
+        if (GameObject.Find("Sun"))
+        {
+            _sun = GameObject.Find("Sun").GetComponent<SpriteRenderer>();
+        }
         _events = GameObject.Find("Game").GetComponent<Events>();
-        _events.onActivateSun.AddListener(ChangeSunColor);
+        _events.onActivateSun.AddListener(SunReady);
         _events.onDragonTime.AddListener(StartDragonTimer);
         // _events.onActivateDragon.AddListener(StartDragonTimer);
 
@@ -37,7 +41,7 @@ public class ExplodeTheSun : MonoBehaviour
         
     }
     
-    private void ChangeSunColor()
+    private void SunReady()
     {
         _sun.color = new Color(0, _sun.color.g, _sun.color.b, _sun.color.a);
         _readyToExplode = true;
@@ -60,6 +64,7 @@ public class ExplodeTheSun : MonoBehaviour
      */
     private void StartDragonTimer()
     {
+        _readyToExplode = false;
         SwapCreatures();
         StartCoroutine(DragonTimer());
     }
@@ -72,7 +77,5 @@ public class ExplodeTheSun : MonoBehaviour
         yield return new WaitForSeconds(3);
         SwapCreatures();
         _sun.color = new Color(_sun.color.r,_sun.color.g,_sun.color.b,0);
-        _readyToExplode = false;
-
     }
 }

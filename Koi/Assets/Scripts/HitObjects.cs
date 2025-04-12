@@ -15,7 +15,10 @@ public class HitObjects : MonoBehaviour
     {
         // Find objects
         _events = GameObject.Find("Game").GetComponent<Events>();
-        _sun = GameObject.Find("Sun").GetComponent<SpriteRenderer>();
+        if (GameObject.Find("Sun"))
+        {
+            _sun = GameObject.Find("Sun").GetComponent<SpriteRenderer>();
+        }
         _collectibles = GameObject.FindGameObjectsWithTag("Collectible");
         _koi = GameObject.FindGameObjectWithTag("Player").GetComponent<Koi>();
         
