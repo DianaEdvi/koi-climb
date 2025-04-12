@@ -36,7 +36,6 @@ public class HitObjects : MonoBehaviour
                 _sun.color = new Color(sunColor.r, sunColor.g, sunColor.b, sunColor.a + 0.5f);
                 if (_sun.color.a >= 1 && _events != null && _events.onActivateDragon != null)
                 {
-                    Debug.Log("it is");
                     _events.onActivateDragon?.Invoke();
                 }
                 break;
@@ -52,4 +51,6 @@ public class HitObjects : MonoBehaviour
                 return;
         }
     }
+
+   
 }
