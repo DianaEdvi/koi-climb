@@ -9,12 +9,14 @@ public class HitObjects : MonoBehaviour
     private SpriteRenderer _sun;
     private GameObject[] _collectibles;
     private Koi _koi;
+    private Gamestates _gamestates;
     
     // Start is called before the first frame update
     void Start()
     {
         // Find objects
         _events = GameObject.Find("Game").GetComponent<Events>();
+        _gamestates = GameObject.Find("Game").GetComponent<Gamestates>();
         if (GameObject.Find("Sun"))
         {
             _sun = GameObject.Find("Sun").GetComponent<SpriteRenderer>();
@@ -44,7 +46,7 @@ public class HitObjects : MonoBehaviour
                 break;
             case "Obstacle":
                 //return to front
-                _koi.gameObject.transform.position = new Vector3(0, 0, 0);
+                _koi.gameObject.transform.position = _gamestates.RespawnPoint;
                 foreach (var collectible in _collectibles)
                 {
                     collectible.gameObject.SetActive(true);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gamestates : MonoBehaviour
 {
+    [SerializeField] private Vector3 respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,11 @@ public class Gamestates : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public Vector3 RespawnPoint
+    {
+        get => respawnPoint;
+        set => respawnPoint = value;
     }
 }

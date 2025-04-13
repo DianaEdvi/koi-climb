@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8246743892334772120}
   - component: {fileID: 6106220310858990264}
   - component: {fileID: 2673773314399817005}
+  - component: {fileID: 6448386029891189336}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -69,6 +70,9 @@ MonoBehaviour:
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  onEndLevel:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6106220310858990264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,3 +99,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   koi: {fileID: 0}
   dragon: {fileID: 0}
+--- !u!114 &6448386029891189336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8475220318040546037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578684ee9342c6047859dc39fd9dfe46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
