@@ -13,6 +13,7 @@ public class Events : MonoBehaviour
     public UnityEvent onActivateSun;
     public UnityEvent onDragonTime;
     public UnityEvent<string> onHit;
+    public UnityEvent onEndLevel;
         
         // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Events : MonoBehaviour
         onActivateSun ??= new UnityEvent();
         onHit ??= new UnityEvent<string>();
         onDragonTime ??= new UnityEvent();
+        onEndLevel ??= new UnityEvent();
     }
 
     // Update is called once per frame

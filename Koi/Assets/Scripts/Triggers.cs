@@ -41,10 +41,12 @@ public class Triggers : MonoBehaviour
             {
                 _events.onHit?.Invoke(other.gameObject.tag);
             }
-            
-            
+        }
 
-          
+        if (other.gameObject.CompareTag("EndOfLevel"))
+        {
+            _events.onEndLevel?.Invoke();
+            Debug.Log("level ended");
         }
     }
 
