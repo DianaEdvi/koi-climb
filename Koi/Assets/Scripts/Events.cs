@@ -14,6 +14,7 @@ public class Events : MonoBehaviour
     public UnityEvent onDragonTime;
     public UnityEvent<string> onHit;
     public UnityEvent onEndLevel;
+    public UnityEvent onStartLevel;
         
         // Start is called before the first frame update
     void Start()
@@ -29,5 +30,10 @@ public class Events : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void InvokeStart()
+    {
+        onStartLevel?.Invoke();
     }
 }

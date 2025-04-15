@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   koi: {fileID: 0}
   dragon: {fileID: 0}
+  dragonTime: 5
 --- !u!114 &6448386029891189336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,3 +112,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578684ee9342c6047859dc39fd9dfe46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnPoint: {x: 0, y: 0, z: 0}

@@ -18,6 +18,8 @@ public class Movement : MonoBehaviour
     private Koi _koi; // general properties for both koi 
     // private int _rotation = 0;
     [SerializeField] private string creatureType;
+    private bool _movePlayer;
+    private Events _events;
     
     // Start is called before the first frame update
     void Start()
@@ -27,10 +29,16 @@ public class Movement : MonoBehaviour
         _origin = new Vector3(0,0,0);
         _angle += startAngle;
         _koi = GetComponentInParent<Koi>();
+        _events = GameObject.Find("Game").GetComponent<Events>();
+        _events.onStartLevel.AddListener(Begin);
     }
 
     private void FixedUpdate()
     {
+        if (!_movePlayer)
+        {
+            return;
+        }
         // Increase angle according to speed
         _angle += _koi.SpinSpeed;
         
@@ -63,5 +71,10 @@ public class Movement : MonoBehaviour
                 Debug.LogError("Misspelled creature type");
                 return;
         }
+    }
+
+    private void Begin()
+    {
+        _movePlayer = true;
     }
 }

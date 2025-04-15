@@ -492,7 +492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3628173866579579999
 Transform:
   m_ObjectHideFlags: 0
@@ -824,6 +824,7 @@ GameObject:
   - component: {fileID: 3300647295067423651}
   - component: {fileID: 1028399142991218975}
   - component: {fileID: 4239737855694719999}
+  - component: {fileID: 2066450253256710499}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -913,6 +914,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.5
+--- !u!114 &2066450253256710499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201888586104193778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d7c3caf070cd849a120715e5c8fde5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePrefab: {fileID: 6388742219085409135, guid: 0c0c4de1bc160784bb018908853eb33c, type: 3}
+  collectiblePrefab: {fileID: 1504473197103308475, guid: 8fe795d44af611646ad7415a9bc082a1, type: 3}
+  koi:
+  - {fileID: 2518707174905000808}
+  - {fileID: 3261865748279080518}
 --- !u!1 &4833990955495795527
 GameObject:
   m_ObjectHideFlags: 0
