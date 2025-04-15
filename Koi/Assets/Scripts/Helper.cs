@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Spawns food when you press shift 
+ * Helps me figure out where to position the game objects for quick development
+ */
 public class Helper : MonoBehaviour
 {
     [SerializeField] private GameObject obstaclePrefab;
@@ -23,7 +27,6 @@ public class Helper : MonoBehaviour
             {
                 Instantiate(collectiblePrefab, k.transform.position, k.transform.rotation);
             }
-            // Instantiate(obstaclePrefab, transform.position, transform.rotation);
         }
         
     }

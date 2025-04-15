@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * For spawning fireballs 
+ */
 public class Spawner : MonoBehaviour {
         
     [SerializeField] private GameObject fireballPrefab;
@@ -18,6 +21,9 @@ public class Spawner : MonoBehaviour {
         var childCount = _spawner.transform.childCount;
         _spawns = new GameObject[childCount];
 
+        /**
+         * Store all spawners
+         */
         for (var i = 0; i < childCount; i++)
         {
             _spawns[i] = _spawner.transform.GetChild(i).gameObject;
@@ -26,6 +32,7 @@ public class Spawner : MonoBehaviour {
 
     private void Update()
     {
+        // Spawn all the fireballs. Launch is there for a reason and i dont remember why 
         if (_launch)
         {
             foreach (var spawn in _spawns)

@@ -28,11 +28,4 @@ public class Events : MonoBehaviour
         onRespawnPlayer ??= new UnityEvent<Vector3>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * A useless class that I will deal with in the future
+ */
 public class Gamestates : MonoBehaviour
 {
     [SerializeField] private Events _events;

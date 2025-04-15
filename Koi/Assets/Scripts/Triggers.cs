@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/**
+ * Deals with the collisions and calling the appropriate methods 
+ */
 public class Triggers : MonoBehaviour
 {
     private Events _events;
@@ -34,7 +37,6 @@ public class Triggers : MonoBehaviour
         {
             if (gameObject.CompareTag("Fireball"))
             {
-                // Debug.Log("cllision");
                 // other.gameObject.SetActive(false);
             }
             else if (_events != null && _events.onHit != null)
@@ -43,10 +45,12 @@ public class Triggers : MonoBehaviour
             }
         }
 
+        // End the level and reset the player to the beginning 
         if (other.gameObject.CompareTag("EndOfLevel"))
         {
             _events.onEndLevel?.Invoke();
             var koi = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            koi.RespawnPoint = new Vector3(0, 0, 0);
             _events.onRespawnPlayer?.Invoke(koi.RespawnPoint);
             Debug.Log("level ended");
         }

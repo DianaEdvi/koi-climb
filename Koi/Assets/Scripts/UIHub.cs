@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * For managing UI
+ */
 public class UIHub : MonoBehaviour
 {
     private Events _events;
@@ -22,7 +25,7 @@ public class UIHub : MonoBehaviour
         
     }
 
-    public void ReactivateUI()
+    private void ReactivateUI()
     {
         canvas.gameObject.SetActive(true);
     }

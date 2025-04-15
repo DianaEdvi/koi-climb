@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        _respawnMarker.transform.position = respawnPoint;
+        _respawnMarker.transform.position = new Vector3(0,respawnPoint.y, 0);
     }
 
     public float RiseSpeed
@@ -72,10 +72,13 @@ public class Player : MonoBehaviour
         set => respawnPoint = value;
     }
 
+    /**
+     * Resets the position of the parent player object to the most recent spawnpoint  
+     */
     private void RespawnPlayer(Vector3 spawnPoint)
     {
         transform.position = spawnPoint;
         respawnPoint = spawnPoint;
-        _respawnMarker.transform.position = spawnPoint;
+        _respawnMarker.transform.position = new Vector3(0, spawnPoint.y, 0);
     }
 }

@@ -79,6 +79,9 @@ public class Movement : MonoBehaviour
         }
     }
 
+    /**
+     * Returns koi fish to base positions when respawn
+     */
     private void ResetPosition(Vector3 wtv)
     {
         transform.rotation = Quaternion.Euler(startRotation);

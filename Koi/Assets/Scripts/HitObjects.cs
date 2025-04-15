@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/**
+ * The actual collision logic for when an object is hit 
+ */
 public class HitObjects : MonoBehaviour
 {
     private Events _events;

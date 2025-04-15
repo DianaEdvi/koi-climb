@@ -28,6 +28,23 @@ public class Inputs : MonoBehaviour
     void Update()
     {
         // This is kind of ass and needs to be reworked. i want controller support as well
+        
+        if (Input.GetKeyDown(KeyCode.W)) // Start when key is first pressed
+        {
+            _player.RespawnPoint = _player.transform.position; // set the spawn
+
+            if (_respawnCoroutine == null) // Avoid restarting it every frame
+                _respawnCoroutine = StartCoroutine(RespawnTimer());
+        }
+        else if (Input.GetKeyUp(KeyCode.W)) // Cancel if key is released
+        {
+            if (_respawnCoroutine != null)
+            {
+                StopCoroutine(_respawnCoroutine);
+                _respawnCoroutine = null;
+            }
+        }
+        
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _player.SpinSpeed = Mathf.Abs(_player.SpinSpeed);
@@ -71,21 +88,7 @@ public class Inputs : MonoBehaviour
             }
         }
         
-        if (Input.GetKeyDown(KeyCode.W)) // Start when key is first pressed
-        {
-            _player.RespawnPoint = _player.transform.position; // set the spawn
-
-            if (_respawnCoroutine == null) // Avoid restarting it every frame
-                _respawnCoroutine = StartCoroutine(RespawnTimer());
-        }
-        else if (Input.GetKeyUp(KeyCode.W)) // Cancel if key is released
-        {
-            if (_respawnCoroutine != null)
-            {
-                StopCoroutine(_respawnCoroutine);
-                _respawnCoroutine = null;
-            }
-        }
+        
         
     }
 
