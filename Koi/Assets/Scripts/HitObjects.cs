@@ -8,7 +8,7 @@ public class HitObjects : MonoBehaviour
     private Events _events;
     private SpriteRenderer _sun;
     private GameObject[] _collectibles;
-    private Koi _koi;
+    private Player _player;
     private Gamestates _gamestates;
     
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class HitObjects : MonoBehaviour
             _sun = GameObject.Find("Sun").GetComponent<SpriteRenderer>();
         }
         _collectibles = GameObject.FindGameObjectsWithTag("Collectible");
-        _koi = GameObject.FindGameObjectWithTag("Player").GetComponent<Koi>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         
         // Add listeners
         _events.onHit.AddListener(Hit);
@@ -47,7 +47,9 @@ public class HitObjects : MonoBehaviour
                 break;
             case "Obstacle":
                 //return to front
-                _koi.gameObject.transform.position = _gamestates.RespawnPoint;
+                _events.onRespawnPlayer?.Invoke(_player.RespawnPoint);
+                Debug.Log(_player.RespawnPoint);
+                // _koi.gameObject.transform.position = _gamestates.RespawnPoint;
                 foreach (var collectible in _collectibles)
                 {
                     collectible.gameObject.SetActive(true);

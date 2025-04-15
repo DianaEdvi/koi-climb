@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gamestates : MonoBehaviour
+public class UIHub : MonoBehaviour
 {
-    [SerializeField] private Events _events;
+    private Events _events;
+    [SerializeField] private Canvas canvas;
+    
     // Start is called before the first frame update
     void Start()
     {
         _events = GameObject.Find("Game").GetComponent<Events>();
+        _events.onEndLevel.AddListener(ReactivateUI);
         
 
     }
@@ -19,11 +22,8 @@ public class Gamestates : MonoBehaviour
         
     }
 
-
-    
-    public void InvokeStart()
+    public void ReactivateUI()
     {
-        _events.onStartLevel?.Invoke();
+        canvas.gameObject.SetActive(true);
     }
-    
 }

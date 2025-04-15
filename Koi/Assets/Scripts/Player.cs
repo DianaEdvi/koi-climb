@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 /**
  * Sets movement properties for the player  
  */
-public class Koi : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] private float riseSpeed = 0.05f;
     [SerializeField] private float spinSpeed = 0.05f;
@@ -15,7 +15,17 @@ public class Koi : MonoBehaviour
     [SerializeField] private float radius = 2;
     private float _direction;
     private bool isFlipped = false;
-    
+    [SerializeField] private Vector3 respawnPoint;
+    private Events _events;
+    private GameObject _blackKoi;
+    private GameObject _whiteKoi;
+
+    private void Start()
+    {
+        _events = GameObject.Find("Game").GetComponent<Events>();
+        _events.onRespawnPlayer.AddListener(RespawnPlayer);
+    }
+
     public float RiseSpeed
     {
         get => riseSpeed;
@@ -49,5 +59,16 @@ public class Koi : MonoBehaviour
     {
         get => isFlipped;
         set => isFlipped = value;
+    }
+    
+    public Vector3 RespawnPoint
+    {
+        get => respawnPoint;
+        set => respawnPoint = value;
+    }
+
+    private void RespawnPlayer(Vector3 spawnPoint)
+    {
+        transform.position = spawnPoint;
     }
 }
