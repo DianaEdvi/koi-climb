@@ -5,4 +5,10 @@ bugs
 
 todo
 - import controller settings 
-- 
+- change dragon to transform the level into a shooter game where the player needs to kill all the mobs before the time runs out 
+- and the circle fireballs are a pickup they can get (consistently! no rng, but still a challenge somehow) 
+- implement respawn mechanic to actually work when you press r 
+- i think you should make the shooter an optional collectible in the level (that appears only once but has multiple collection points if missed) 
+- set as many respawns as you want, though 
+
+- end screen after level: food caught, enemies killed, respawned used, koi fish rating 

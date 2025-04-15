@@ -34,8 +34,8 @@ public class Triggers : MonoBehaviour
         {
             if (gameObject.CompareTag("Fireball"))
             {
-                Debug.Log("cllision");
-                other.gameObject.SetActive(false);
+                // Debug.Log("cllision");
+                // other.gameObject.SetActive(false);
             }
             else if (_events != null && _events.onHit != null)
             {

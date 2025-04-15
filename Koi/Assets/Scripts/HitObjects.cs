@@ -37,6 +37,7 @@ public class HitObjects : MonoBehaviour
         {
             case "Collectible":
                 //increase alpha and activate the sun
+                if (_sun == null) return;
                 var sunColor = _sun.color;
                 _sun.color = new Color(sunColor.r, sunColor.g, sunColor.b, sunColor.a + 0.5f);
                 if (_sun.color.a >= 1 && _events != null && _events.onActivateSun != null)

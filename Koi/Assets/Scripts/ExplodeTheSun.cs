@@ -13,6 +13,7 @@ public class ExplodeTheSun : MonoBehaviour
     private Events _events;
     [SerializeField] private GameObject koi;
     [SerializeField] private GameObject dragon;
+    [SerializeField] private float dragonTime = 3f;
     private bool _readyToExplode;
 
     public bool ReadyToExplode => _readyToExplode;
@@ -74,7 +75,7 @@ public class ExplodeTheSun : MonoBehaviour
      */
     IEnumerator DragonTimer()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(dragonTime);
         SwapCreatures();
         _sun.color = new Color(_sun.color.r,_sun.color.g,_sun.color.b,0);
     }
