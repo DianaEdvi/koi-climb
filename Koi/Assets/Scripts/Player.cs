@@ -16,14 +16,19 @@ public class Player : MonoBehaviour
     private float _direction;
     private bool isFlipped = false;
     [SerializeField] private Vector3 respawnPoint;
+    private GameObject _respawnMarker;
     private Events _events;
-    private GameObject _blackKoi;
-    private GameObject _whiteKoi;
 
     private void Start()
     {
         _events = GameObject.Find("Game").GetComponent<Events>();
         _events.onRespawnPlayer.AddListener(RespawnPlayer);
+        _respawnMarker = GameObject.Find("Respawn marker");
+    }
+
+    private void Update()
+    {
+        _respawnMarker.transform.position = respawnPoint;
     }
 
     public float RiseSpeed
@@ -70,5 +75,7 @@ public class Player : MonoBehaviour
     private void RespawnPlayer(Vector3 spawnPoint)
     {
         transform.position = spawnPoint;
+        respawnPoint = spawnPoint;
+        _respawnMarker.transform.position = spawnPoint;
     }
 }

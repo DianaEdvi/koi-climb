@@ -26,6 +26,7 @@ public class HitObjects : MonoBehaviour
         
         // Add listeners
         _events.onHit.AddListener(Hit);
+        _events.onRespawnPlayer.AddListener(ResetCollectibles);
     }
 
     /**
@@ -50,13 +51,17 @@ public class HitObjects : MonoBehaviour
                 _events.onRespawnPlayer?.Invoke(_player.RespawnPoint);
                 Debug.Log(_player.RespawnPoint);
                 // _koi.gameObject.transform.position = _gamestates.RespawnPoint;
-                foreach (var collectible in _collectibles)
-                {
-                    collectible.gameObject.SetActive(true);
-                }
+                ResetCollectibles(Vector3.zero);
                 break;
             default:
                 return;
+        }
+    }
+
+    private void ResetCollectibles(Vector3 pos) {
+        foreach (var collectible in _collectibles)
+        {
+            collectible.gameObject.SetActive(true);
         }
     }
 
