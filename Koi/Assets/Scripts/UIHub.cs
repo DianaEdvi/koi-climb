@@ -56,7 +56,6 @@ public class UIHub : MonoBehaviour
                    _text = "" + i;
                    _button.GetComponentInChildren<TMP_Text>().text = _text;
                    _checkpoints.NumberOfCheckpoints = i;
-                   Debug.Log(_checkpoints.NumberOfCheckpoints);
                 }
             }
             

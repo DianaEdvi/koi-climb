@@ -28,8 +28,6 @@ public class Checkpoints : MonoBehaviour
         
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _events = GameObject.Find("Game").GetComponent<Events>();
-
-        Debug.Log(_checkPoints[0]);
     }
 
     // Update is called once per frame

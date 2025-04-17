@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 /**
@@ -32,14 +33,22 @@ public class Movement : MonoBehaviour
         _origin = new Vector3(0,0,0);
         _angle += startAngle;
         _player = GetComponentInParent<Player>();
-        _events = GameObject.Find("Game").GetComponent<Events>();
-        _events.onStartLevel.AddListener((() => _movePlayer = true));
-        _events.onEndLevel.AddListener((() => _movePlayer = false));
-        _events.onRespawnPlayer.AddListener(ResetPosition);
+        GameObject gameObj = GameObject.Find("Game");
+        if (gameObj != null)
+        {
+            _events = gameObj.GetComponent<Events>();
+            _events.onStartLevel.AddListener((() => _movePlayer = true));
+            _events.onEndLevel.AddListener((() => _movePlayer = false));
+            _events.onRespawnPlayer.AddListener(ResetPosition);
+        }
     }
 
     private void FixedUpdate()
     {
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            _movePlayer = true;
+        }
         if (!_movePlayer)
         {
             return;
@@ -49,7 +58,11 @@ public class Movement : MonoBehaviour
         _angle += _player.SpinSpeed;
         
         MovementSpecifics(creatureType);
-       
+
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            return;
+        }
         // Move both koi upwards and move koi left and right depending on input 
         var koiPositions = _player.transform.position;
         _player.transform.position = new Vector3(koiPositions.x + _player.Direction * _player.SideSpeed, koiPositions.y + _player.RiseSpeed, koiPositions.z);

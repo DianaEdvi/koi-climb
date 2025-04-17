@@ -52,7 +52,6 @@ public class HitObjects : MonoBehaviour
             case "Obstacle":
                 //return to front
                 _events.onRespawnPlayer?.Invoke(_player.RespawnPoint);
-                Debug.Log(_player.RespawnPoint);
                 // _koi.gameObject.transform.position = _gamestates.RespawnPoint;
                 ResetCollectibles(Vector3.zero);
                 break;

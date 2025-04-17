@@ -24,6 +24,10 @@ public class Borders : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bounds == null)
+        {
+            return;
+        }
         // bind the bounds to the outer collider, accounting for the radius of the collider 
         var xBound = Mathf.Clamp(koiCollider.transform.position.x, bounds.bounds.min.x + _koiColliderRadius, bounds.bounds.max.x - _koiColliderRadius);
         var yBound = Mathf.Clamp(koiCollider.transform.position.y, bounds.bounds.min.y + _koiColliderRadius, bounds.bounds.max.y - _koiColliderRadius);

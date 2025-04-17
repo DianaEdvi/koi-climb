@@ -9,10 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 264577987978579114}
-  - component: {fileID: 4142648682510548399}
-  - component: {fileID: 8246743892334772120}
-  - component: {fileID: 6106220310858990264}
-  - component: {fileID: 2673773314399817005}
   - component: {fileID: 6448386029891189336}
   m_Layer: 0
   m_Name: Game
@@ -36,70 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4142648682510548399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8475220318040546037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6719d15c6e13d846a8970d08b237fdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragon: {fileID: 0}
---- !u!114 &8246743892334772120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8475220318040546037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6387173ef7d734b9760c57bdd74a0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onActivateSun:
-    m_PersistentCalls:
-      m_Calls: []
-  onDragonTime:
-    m_PersistentCalls:
-      m_Calls: []
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
-  onEndLevel:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6106220310858990264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8475220318040546037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c8819bc0a3f5e84b9f4366333e131f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2673773314399817005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8475220318040546037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85067026de292b4cbbcfbeb4c8e27e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  koi: {fileID: 0}
-  dragon: {fileID: 0}
-  dragonTime: 5
 --- !u!114 &6448386029891189336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578684ee9342c6047859dc39fd9dfe46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {x: 0, y: 0, z: 0}
+  _events: {fileID: 0}

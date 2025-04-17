@@ -21,14 +21,27 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _events = GameObject.Find("Game").GetComponent<Events>();
-        _events.onRespawnPlayer.AddListener(RespawnPlayer);
-        _respawnMarker = GameObject.Find("Respawn marker");
+        GameObject gameObj = GameObject.Find("Game");
+        if (gameObj != null)
+        {
+            _events = gameObj.GetComponent<Events>();
+            _events.onRespawnPlayer.AddListener(RespawnPlayer);
+            
+        }
+        
+        GameObject rspwn = GameObject.Find("Respawn marker");
+        if (rspwn != null)
+        {
+            _respawnMarker = rspwn;
+        }
     }
 
     private void Update()
     {
-        _respawnMarker.transform.position = new Vector3(0,respawnPoint.y, 0);
+        if (_respawnMarker != null)
+        {
+            _respawnMarker.transform.position = new Vector3(0,respawnPoint.y, 0);
+        }
     }
 
     public float RiseSpeed
