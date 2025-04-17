@@ -10,10 +10,11 @@ public class Checkpoints : MonoBehaviour
     private Events _events;
     private bool _swapCheckPoint;
     private GameObject _currentCheckPoint;
+    private int _numberOfCheckpoints;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
         var childCount = transform.childCount;
         _checkPoints = new GameObject[childCount];
 
@@ -22,7 +23,9 @@ public class Checkpoints : MonoBehaviour
             _checkPoints[i] = transform.GetChild(i).gameObject;
         }
         _checkPoints = GameObject.FindGameObjectsWithTag("Checkpoint");
+        _numberOfCheckpoints = _checkPoints.Length;
         System.Array.Reverse(_checkPoints);
+        
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _events = GameObject.Find("Game").GetComponent<Events>();
 
@@ -32,7 +35,7 @@ public class Checkpoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (var i = 0; i < _checkPoints.Length; i++)
+        for (var i = 0; i < _numberOfCheckpoints; i++)
         {
             if (_player.gameObject.transform.position.y > _checkPoints[i].transform.position.y && _checkPoints[i] != _currentCheckPoint)
             {
@@ -46,5 +49,11 @@ public class Checkpoints : MonoBehaviour
             _player.RespawnPoint = new Vector3(0, _currentCheckPoint.transform.position.y, 0);
             _swapCheckPoint = false;
         }
+    }
+
+    public int NumberOfCheckpoints
+    {
+        get => _numberOfCheckpoints;
+        set => _numberOfCheckpoints = value;
     }
 }

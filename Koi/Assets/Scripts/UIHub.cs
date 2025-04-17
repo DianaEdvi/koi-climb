@@ -14,6 +14,7 @@ public class UIHub : MonoBehaviour
     private Image _image;
     private int _counter;
     private string _text;
+    private Checkpoints _checkpoints;
 
 
     void Start()
@@ -22,6 +23,7 @@ public class UIHub : MonoBehaviour
         _events.onEndLevel.AddListener(ReactivateUI);
         _button = GameObject.Find("Assist level button").GetComponent<Button>();
         _image = GameObject.Find("Assist level button").GetComponent<Image>();
+        _checkpoints = GameObject.Find("Checkpoints").GetComponent<Checkpoints>();
 
         assistColors = new Color[4];
         assistColors[0] = new Color(1f, 200f / 255f, 200f / 255f);
@@ -53,6 +55,8 @@ public class UIHub : MonoBehaviour
                    _image.color = assistColors[i];
                    _text = "" + i;
                    _button.GetComponentInChildren<TMP_Text>().text = _text;
+                   _checkpoints.NumberOfCheckpoints = i;
+                   Debug.Log(_checkpoints.NumberOfCheckpoints);
                 }
             }
             
