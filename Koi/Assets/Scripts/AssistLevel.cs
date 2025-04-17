@@ -13,7 +13,7 @@ public class AssistLevel : MonoBehaviour
     private int _counter;
     private string _text;
     private Checkpoints _checkpoints;
-
+    
 
     void Start()
     {

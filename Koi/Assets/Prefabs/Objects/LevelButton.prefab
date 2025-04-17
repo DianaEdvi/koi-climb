@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.64779866, g: 0.64779866, b: 0.64779866, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u4E8C"
+  m_text: "\u4E00"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4152fdee3350761499d4b637b8dade0d, type: 2}
   m_sharedMaterial: {fileID: -4927336803244884695, guid: 4152fdee3350761499d4b637b8dade0d, type: 2}
@@ -348,6 +348,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3194486211903923773, guid: c67be3b478b238746a00ea23b7308102, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 12b4cb6f7be15084d82535ec85c6d866, type: 2}
+    - target: {fileID: 3194486211903923773, guid: c67be3b478b238746a00ea23b7308102, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3522433602361100562, guid: 12b4cb6f7be15084d82535ec85c6d866, type: 2}
     - target: {fileID: 3346293994439376309, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_Name
       value: Assist level button
