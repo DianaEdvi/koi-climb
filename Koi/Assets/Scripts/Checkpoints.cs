@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
@@ -18,28 +19,23 @@ public class Checkpoints : MonoBehaviour
 
         for (var i = 0; i < childCount; i++)
         {
-            Debug.Log("higher");
             _checkPoints[i] = transform.GetChild(i).gameObject;
         }
-        
         _checkPoints = GameObject.FindGameObjectsWithTag("Checkpoint");
+        System.Array.Reverse(_checkPoints);
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _events = GameObject.Find("Game").GetComponent<Events>();
 
-        foreach (var VARIABLE in _checkPoints)
-        {
-            Debug.Log(VARIABLE.name);
-        }
+        Debug.Log(_checkPoints[0]);
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (var i = _checkPoints.Length - 1; i >= 0; i--)
+        for (var i = 0; i < _checkPoints.Length; i++)
         {
             if (_player.gameObject.transform.position.y > _checkPoints[i].transform.position.y && _checkPoints[i] != _currentCheckPoint)
             {
-                Debug.Log("VAR");
                 _swapCheckPoint = true;
                 _currentCheckPoint = _checkPoints[i];
             } 

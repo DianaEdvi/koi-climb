@@ -12,7 +12,6 @@ public class Inputs : MonoBehaviour
     private Events _events;
     [SerializeField] private GameObject dragon;
     private Spawner _spawner;
-    private Coroutine _respawnCoroutine;
     
     // Start is called before the first frame update
     void Start()
@@ -28,22 +27,6 @@ public class Inputs : MonoBehaviour
     void Update()
     {
         // This is kind of ass and needs to be reworked. i want controller support as well
-        
-        if (Input.GetKeyDown(KeyCode.W)) // Start when key is first pressed
-        {
-            _player.RespawnPoint = _player.transform.position; // set the spawn
-
-            if (_respawnCoroutine == null) // Avoid restarting it every frame
-                _respawnCoroutine = StartCoroutine(RespawnTimer());
-        }
-        else if (Input.GetKeyUp(KeyCode.W)) // Cancel if key is released
-        {
-            if (_respawnCoroutine != null)
-            {
-                StopCoroutine(_respawnCoroutine);
-                _respawnCoroutine = null;
-            }
-        }
         
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -87,15 +70,6 @@ public class Inputs : MonoBehaviour
                 }
             }
         }
-        
-        
-        
-    }
-
-    IEnumerator RespawnTimer()
-    {
-        yield return new WaitForSeconds(3);
-        _events.onRespawnPlayer?.Invoke(new Vector3(0,0,0));
     }
 
 }
