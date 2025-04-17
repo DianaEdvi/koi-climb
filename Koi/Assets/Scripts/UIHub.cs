@@ -37,7 +37,6 @@ public class UIHub : MonoBehaviour
 
     public void SetAssistLevel()
     {
-        Debug.Log("ptrssed");
         _counter++;
 
         if (_counter == 4)

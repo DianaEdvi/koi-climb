@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Fireball
   - EndOfLevel
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
