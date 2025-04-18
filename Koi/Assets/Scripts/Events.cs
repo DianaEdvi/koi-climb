@@ -17,6 +17,7 @@ public class Events : MonoBehaviour
     public UnityEvent onStartLevel;
     public UnityEvent<Vector3> onRespawnPlayer;
     public UnityEvent<string> onChangeScene;
+    public UnityEvent onPause;
         
         // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Events : MonoBehaviour
         onEndLevel ??= new UnityEvent();
         onRespawnPlayer ??= new UnityEvent<Vector3>();
         onChangeScene ??= new UnityEvent<string>();
+        onPause ??= new UnityEvent();
     }
 
 }

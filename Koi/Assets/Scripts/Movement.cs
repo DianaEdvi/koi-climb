@@ -40,6 +40,7 @@ public class Movement : MonoBehaviour
             _events.onStartLevel.AddListener((() => _movePlayer = true));
             _events.onEndLevel.AddListener((() => _movePlayer = false));
             _events.onRespawnPlayer.AddListener(ResetPosition);
+            _events.onPause.AddListener(() => _movePlayer = !_movePlayer);
         }
     }
 

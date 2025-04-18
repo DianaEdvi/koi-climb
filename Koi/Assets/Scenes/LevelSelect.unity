@@ -1647,6 +1647,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3207007126330163096, guid: 2892152696825534a860c99353c4dfc3, type: 3}
+      propertyPath: m_fontSize
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207007126330163096, guid: 2892152696825534a860c99353c4dfc3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 54
+      objectReference: {fileID: 0}
     - target: {fileID: 3361065334301811728, guid: 2892152696825534a860c99353c4dfc3, type: 3}
       propertyPath: m_Name
       value: Assist level button Variant

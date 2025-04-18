@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2537153306601764365, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2537153306601764365, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2537153306601764365, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,11 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2537153306601764365, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 738.57605
+      value: 8.1
       objectReference: {fileID: 0}
     - target: {fileID: 2537153306601764365, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.91998
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 2537153306601764365, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -92,6 +92,22 @@ PrefabInstance:
       propertyPath: m_text
       value: '?'
       objectReference: {fileID: 0}
+    - target: {fileID: 3194486211903923773, guid: c67be3b478b238746a00ea23b7308102, type: 3}
+      propertyPath: m_fontSize
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194486211903923773, guid: c67be3b478b238746a00ea23b7308102, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d14312c591f949b48bff035e83cf5327, type: 2}
+    - target: {fileID: 3194486211903923773, guid: c67be3b478b238746a00ea23b7308102, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194486211903923773, guid: c67be3b478b238746a00ea23b7308102, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3014253513473275831, guid: d14312c591f949b48bff035e83cf5327, type: 2}
     - target: {fileID: 3346293994439376309, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_Name
       value: Assist level button Variant

@@ -27,6 +27,11 @@ public class Inputs : MonoBehaviour
     void Update()
     {
         // This is kind of ass and needs to be reworked. i want controller support as well
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _events.onPause?.Invoke();
+        }
         
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {

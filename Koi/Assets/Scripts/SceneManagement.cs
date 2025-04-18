@@ -23,14 +23,6 @@ public class SceneManagement : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        //
-        // var scene = SceneManager.GetSceneByName(sceneName);
-        // Debug.Log(scene.name);
-        // if (scene.IsValid())
-        // {
-        //     Debug.Log("VAR");
-        //     SceneManager.LoadScene(scene.name);
-        // }
     }
 
     public void NextLevel()
