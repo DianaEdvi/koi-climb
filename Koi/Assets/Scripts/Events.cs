@@ -16,6 +16,7 @@ public class Events : MonoBehaviour
     public UnityEvent onEndLevel;
     public UnityEvent onStartLevel;
     public UnityEvent<Vector3> onRespawnPlayer;
+    public UnityEvent<string> onChangeScene;
         
         // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class Events : MonoBehaviour
         onDragonTime ??= new UnityEvent();
         onEndLevel ??= new UnityEvent();
         onRespawnPlayer ??= new UnityEvent<Vector3>();
+        onChangeScene ??= new UnityEvent<string>();
     }
 
 }
