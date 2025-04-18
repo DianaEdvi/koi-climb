@@ -2870,7 +2870,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6448386029891189336, guid: e96484ef9cfad1e4981fcea3088cd457, type: 3}
   m_PrefabInstance: {fileID: 622677041}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1272942716}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 578684ee9342c6047859dc39fd9dfe46, type: 3}
@@ -4531,7 +4531,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8475220318040546037, guid: e96484ef9cfad1e4981fcea3088cd457, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1272942719}
+    - targetCorrespondingSourceObject: {fileID: 8475220318040546037, guid: e96484ef9cfad1e4981fcea3088cd457, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1272942720}
   m_SourcePrefab: {fileID: 100100000, guid: e96484ef9cfad1e4981fcea3088cd457, type: 3}
 --- !u!1001 &625221840
 PrefabInstance:
@@ -10444,6 +10450,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7642403008106085933, guid: 0c0c4de1bc160784bb018908853eb33c, type: 3}
   m_PrefabInstance: {fileID: 291550871}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1272942716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8475220318040546037, guid: e96484ef9cfad1e4981fcea3088cd457, type: 3}
+  m_PrefabInstance: {fileID: 622677041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1272942719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272942716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6387173ef7d734b9760c57bdd74a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onActivateSun:
+    m_PersistentCalls:
+      m_Calls: []
+  onDragonTime:
+    m_PersistentCalls:
+      m_Calls: []
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndLevel:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartLevel:
+    m_PersistentCalls:
+      m_Calls: []
+  onRespawnPlayer:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeScene:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1272942720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272942716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6719d15c6e13d846a8970d08b237fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragon: {fileID: 966043910}
 --- !u!4 &1275733457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7642403008106085933, guid: 0c0c4de1bc160784bb018908853eb33c, type: 3}
@@ -14770,7 +14827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1862044336}
-  assistColors: []
 --- !u!1 &1863396551
 GameObject:
   m_ObjectHideFlags: 0
