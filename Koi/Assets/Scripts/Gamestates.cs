@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /**
@@ -8,22 +10,77 @@ using UnityEngine.UI;
  */
 public class Gamestates : MonoBehaviour
 {
+    private static Gamestates _instance;
     [SerializeField] private Events _events;
 
     private Button _pauseButton;
     [SerializeField] private GameObject pausePanel;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
     
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        pausePanel = GameObject.Find("PausePanel");
+
+        if (pausePanel != null)
+        {
+            Debug.Log("Found: " + pausePanel.name);
+            pausePanel.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("PausePanel not found in scene: " + scene.name);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        _events = GameObject.Find("Game").GetComponent<Events>();
+        _events = GetComponent<Events>();
+        if (_events == null)
+        {
+            Debug.LogError("Events script not found!");
+            return;
+        }
+
+        // Delay binding the pause handler until we know the panel exists
         _events.onPause.AddListener(Pause);
-        FindPauseObjects();
+
+        FindPauseObjects(); // sets pausePanel
+
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(false);
+        }
     }
+
     
     public void InvokeStart()
     {
         _events.onStartLevel?.Invoke();
+    }
+
+    public void InvokePause()
+    {
+        _events.onPause?.Invoke();
     }
 
     private void FindPauseObjects()
@@ -35,10 +92,10 @@ public class Gamestates : MonoBehaviour
             if (obj.name == "PauseButton")
             {
                 _pauseButton = obj.GetComponent<Button>();
-                _pauseButton.onClick.AddListener(() =>
-                {
-                    _events.onPause?.Invoke();
-                });
+                // _pauseButton.onClick.AddListener(() =>
+                // {
+                //     _events.onPause?.Invoke();
+                // });
             }
             else if (obj.name == "PausePanel")
             {
