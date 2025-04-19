@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     private Player _player; // general properties for both koi 
     // private int _rotation = 0;
     [SerializeField] private string creatureType;
-    private bool _movePlayer;
+    private bool _movePlayer = true;
     private Events _events;
     
     // Start is called before the first frame update
@@ -46,10 +46,6 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (SceneManager.GetActiveScene().name == "Menu")
-        {
-            _movePlayer = true;
-        }
         if (!_movePlayer)
         {
             return;

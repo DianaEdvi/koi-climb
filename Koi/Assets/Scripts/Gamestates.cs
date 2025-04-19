@@ -11,7 +11,7 @@ public class Gamestates : MonoBehaviour
     [SerializeField] private Events _events;
 
     private Button _pauseButton;
-    private GameObject _pausePanel;
+    [SerializeField] private GameObject pausePanel;
     
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class Gamestates : MonoBehaviour
             }
             else if (obj.name == "PausePanel")
             {
-                _pausePanel = obj;
+                pausePanel = obj;
             }
             else
             {
@@ -53,7 +53,7 @@ public class Gamestates : MonoBehaviour
 
     private void Pause()
     {
-        _pausePanel.SetActive(!_pausePanel.activeSelf);
+        pausePanel.SetActive(!pausePanel.activeSelf);
     }
     
 }

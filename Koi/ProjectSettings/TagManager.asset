@@ -9,6 +9,7 @@ TagManager:
   - Fireball
   - EndOfLevel
   - Checkpoint
+  - Pause
   layers:
   - Default
   - TransparentFX
