@@ -13,7 +13,15 @@ public class AssistLevel : MonoBehaviour
     private int _counter;
     private string _text;
     private Checkpoints _checkpoints;
-    
+    [SerializeField] private int level;
+
+    public int Level => level;
+
+    public int Counter
+    {
+        get => _counter;
+        set => _counter = value;
+    }
 
     void Start()
     {
@@ -52,6 +60,8 @@ public class AssistLevel : MonoBehaviour
                     _image.color = assistColors[i];
                     _text = "" + i;
                     _button.GetComponentInChildren<TMP_Text>().text = _text;
+                    var events = GameObject.Find("Game").GetComponent<Events>();
+                    events.onAssistChanged?.Invoke(this);
                     if (_checkpoints != null)
                     {
                         _checkpoints.NumberOfCheckpoints = i;

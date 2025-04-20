@@ -122,7 +122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2703399027965597523}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9121653379166986300, guid: e96484ef9cfad1e4981fcea3088cd457, type: 3}
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2300527714854612325
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,34 +516,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3346293994439376309, guid: c67be3b478b238746a00ea23b7308102, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5850890650431133121}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67be3b478b238746a00ea23b7308102, type: 3}
 --- !u!224 &1312403039111734719 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2537153306601764365, guid: c67be3b478b238746a00ea23b7308102, type: 3}
   m_PrefabInstance: {fileID: 3531755461039707058}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2266221324618018311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3346293994439376309, guid: c67be3b478b238746a00ea23b7308102, type: 3}
-  m_PrefabInstance: {fileID: 3531755461039707058}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5850890650431133121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2266221324618018311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c814ad9523a65d14988b05ae6c5cea2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assistColors: []
 --- !u!1001 &5095483761132988579
 PrefabInstance:
   m_ObjectHideFlags: 0
