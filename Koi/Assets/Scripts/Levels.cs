@@ -8,15 +8,18 @@ public class Levels : MonoBehaviour
 {
     [SerializeField] private int numberOfLevels = 5;
     private static Levels _instance;
-    [SerializeField] private GameObject[] _parents;
+    private GameObject[] _parents;
     private Events _events;
     [SerializeField] private int[] values;
-    private bool paused;
-
 
     private void OnEnable()
     {
         SceneManager.sceneLoaded += UpdateAssistLevels;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= UpdateAssistLevels;
     }
 
     private void Awake()
@@ -43,31 +46,27 @@ public class Levels : MonoBehaviour
     }
 
     /**
-     * 
+     * Update the values tracker for the assist levels
      */
     private void TrackAssistLevel(AssistLevel assistLevel)
     {
-        if (SceneManager.GetActiveScene().name == "LevelSelect")
+        for (var i = 0; i < numberOfLevels; i++)
         {
-            for (var i = 0; i < numberOfLevels; i++)
+            var num = i + 1;
+            var lvlName = "Level" + num;
+
+            if (SceneManager.GetActiveScene().name == "LevelSelect")
             {
-                var num = i + 1;
-                if (assistLevel.gameObject.transform.parent.gameObject.name == "Level" + num)
+                if (assistLevel.gameObject.transform.parent.gameObject.name == lvlName)
                 {
                     values[i] = _parents[i].GetComponentInChildren<AssistLevel>().Counter;
                 }
             }
-        }
-        else
-        {
-            for (var i = 0; i < numberOfLevels; i++)
+            else if (SceneManager.GetActiveScene().name == lvlName)
             {
-                var num = i + 1;
-                if (SceneManager.GetActiveScene().name == "Level" + num)
-                {
-                    values[i] = assistLevel.GetComponentInChildren<AssistLevel>().Counter;
-                }
+                values[i] = assistLevel.GetComponentInChildren<AssistLevel>().Counter;
             }
+            
         }
     }
 
@@ -123,7 +122,11 @@ public class Levels : MonoBehaviour
 
             if (SceneManager.GetActiveScene().name == lvlName)
             {
-                GameObject.FindGameObjectWithTag("PauseAssist").GetComponent<AssistLevel>().Counter = values[i];
+                var obj = GameObject.FindGameObjectWithTag("PauseAssist");
+                if (obj != null)
+                {
+                    obj.GetComponent<AssistLevel>().Counter = values[i];
+                }
             }
         }
     }
