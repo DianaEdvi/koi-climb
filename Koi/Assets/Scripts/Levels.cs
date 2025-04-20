@@ -11,6 +11,7 @@ public class Levels : MonoBehaviour
     [SerializeField] private GameObject[] _parents;
     private Events _events;
     [SerializeField] private int[] values;
+    private bool paused;
 
 
     private void OnEnable()
@@ -38,13 +39,17 @@ public class Levels : MonoBehaviour
     {
         _events = GameObject.Find("Game").GetComponent<Events>();
         _events.onAssistChanged.AddListener(TrackAssistLevel);
+        _events.onPause.AddListener(PauseLevelAssist);
     }
 
+    /**
+     * 
+     */
     private void TrackAssistLevel(AssistLevel assistLevel)
     {
         if (SceneManager.GetActiveScene().name == "LevelSelect")
         {
-            for (var i = 0; i < _parents.Length; i++)
+            for (var i = 0; i < numberOfLevels; i++)
             {
                 var num = i + 1;
                 if (assistLevel.gameObject.transform.parent.gameObject.name == "Level" + num)
@@ -53,15 +58,29 @@ public class Levels : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            for (var i = 0; i < numberOfLevels; i++)
+            {
+                var num = i + 1;
+                if (SceneManager.GetActiveScene().name == "Level" + num)
+                {
+                    values[i] = assistLevel.GetComponentInChildren<AssistLevel>().Counter;
+                }
+            }
+        }
     }
 
+    /**
+     * Search for the level objects every time the scene is loaded in 
+     */
     private void UpdateAssistLevels(Scene scene, LoadSceneMode loadSceneMode)
     {
         if (SceneManager.GetActiveScene().name == "LevelSelect")
         {
+            // initialize values if it doesn't exist 
             if (values.Length != numberOfLevels)
             {
-                Debug.Log("null");
                 values = new int[numberOfLevels];
             }
             _parents = new GameObject[numberOfLevels];
@@ -81,6 +100,7 @@ public class Levels : MonoBehaviour
                         Debug.LogError("_parents array is null!");
                         return;
                     }
+                    // set the level objects and assign their current values
                     _parents[i] = levelObject;
                     _parents[i].GetComponentInChildren<AssistLevel>().Counter = values[i];
 
@@ -88,10 +108,23 @@ public class Levels : MonoBehaviour
             }
         }
     }
+    
 
-    // Update is called once per frame
-    void Update()
+    /**
+     * Special case for when the buttons are on the pause panel
+     */
+    private void PauseLevelAssist()
     {
-        
+        // Check which scene you are in 
+        for (var i = 0; i < numberOfLevels; i++)
+        {
+            var num = i + 1;
+            var lvlName = "Level" + num;
+
+            if (SceneManager.GetActiveScene().name == lvlName)
+            {
+                GameObject.FindGameObjectWithTag("PauseAssist").GetComponent<AssistLevel>().Counter = values[i];
+            }
+        }
     }
 }

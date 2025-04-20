@@ -10,6 +10,7 @@ TagManager:
   - EndOfLevel
   - Checkpoint
   - Pause
+  - PauseAssist
   layers:
   - Default
   - TransparentFX
