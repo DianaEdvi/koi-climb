@@ -37,12 +37,7 @@ public class Gamestates : MonoBehaviour
 
         if (pausePanel != null)
         {
-            Debug.Log("Found: " + pausePanel.name);
             pausePanel.SetActive(false);
-        }
-        else
-        {
-            Debug.Log("PausePanel not found in scene: " + scene.name);
         }
     }
 
