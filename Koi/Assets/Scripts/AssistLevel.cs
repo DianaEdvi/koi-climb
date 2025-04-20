@@ -25,8 +25,11 @@ public class AssistLevel : MonoBehaviour
 
     void Start()
     {
+        // Debug.Log("counter: " + Counter);
+        // Debug.Log("counter: " + _counter);
         _button = gameObject.GetComponent<Button>();
         _image = gameObject.GetComponent<Image>();
+        
         GameObject ckpt = GameObject.Find("Checkpoints");
         if (ckpt != null)
         {
@@ -40,6 +43,7 @@ public class AssistLevel : MonoBehaviour
         assistColors[3] = new Color(240f / 255f, 50f / 255f, 50f / 255f);
         
         _button.onClick.AddListener(SetAssistLevel);
+        UpdateButtonUI();
     }
     
     public void SetAssistLevel()
@@ -57,9 +61,7 @@ public class AssistLevel : MonoBehaviour
             {
                 if (i == _counter)
                 {
-                    _image.color = assistColors[i];
-                    _text = "" + i;
-                    _button.GetComponentInChildren<TMP_Text>().text = _text;
+                    UpdateButtonUI();
                     var events = GameObject.Find("Game").GetComponent<Events>();
                     events.onAssistChanged?.Invoke(this);
                     if (_checkpoints != null)
@@ -70,5 +72,13 @@ public class AssistLevel : MonoBehaviour
             }
             
         }
+    }
+
+    private void UpdateButtonUI()
+    {
+        Debug.Log(_counter);
+        _image.color = assistColors[_counter];
+        _text = "" + _counter;
+        _button.GetComponentInChildren<TMP_Text>().text = _text;
     }
 }

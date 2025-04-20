@@ -10,7 +10,7 @@ public class Levels : MonoBehaviour
     private static Levels _instance;
     [SerializeField] private GameObject[] _parents;
     private Events _events;
-    // [SerializeField] private int[] values;
+    [SerializeField] private int[] values;
 
 
     private void OnEnable()
@@ -37,8 +37,7 @@ public class Levels : MonoBehaviour
     void Start()
     {
         _events = GameObject.Find("Game").GetComponent<Events>();
-        // _events.onAssistChanged.AddListener(TrackAssistLevel);
-        // values = new int[_parents.Length];
+        _events.onAssistChanged.AddListener(TrackAssistLevel);
     }
 
     private void TrackAssistLevel(AssistLevel assistLevel)
@@ -50,7 +49,7 @@ public class Levels : MonoBehaviour
                 var num = i + 1;
                 if (assistLevel.gameObject.transform.parent.gameObject.name == "Level" + num)
                 {
-                    // values[i] = assistLevel.Counter;
+                    values[i] = _parents[i].GetComponentInChildren<AssistLevel>().Counter;
                 }
             }
         }
@@ -60,10 +59,14 @@ public class Levels : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "LevelSelect")
         {
-            Debug.Log("loaded in");
+            if (values.Length != numberOfLevels)
+            {
+                Debug.Log("null");
+                values = new int[numberOfLevels];
+            }
             _parents = new GameObject[numberOfLevels];
 
-
+            // Find level objects 
             for (var i = 0; i < numberOfLevels; i++)
             {
                 var num = i + 1;
@@ -72,8 +75,6 @@ public class Levels : MonoBehaviour
                 var levelObject = GameObject.Find(objName);
                 if (levelObject != null)
                 {
-                    Debug.Log(levelObject.gameObject.name + " found");
-                    
                     // Check if _parents is initialized
                     if (_parents == null)
                     {
@@ -81,9 +82,11 @@ public class Levels : MonoBehaviour
                         return;
                     }
                     _parents[i] = levelObject;
+                    _parents[i].GetComponentInChildren<AssistLevel>().Counter = values[i];
+
                 }
             }
-            // find objects 
+            
             // populate the values 
         }
     }
