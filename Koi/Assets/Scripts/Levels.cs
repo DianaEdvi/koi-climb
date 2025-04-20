@@ -86,8 +86,6 @@ public class Levels : MonoBehaviour
 
                 }
             }
-            
-            // populate the values 
         }
     }
 

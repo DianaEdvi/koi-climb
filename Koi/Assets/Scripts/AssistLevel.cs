@@ -76,7 +76,6 @@ public class AssistLevel : MonoBehaviour
 
     private void UpdateButtonUI()
     {
-        Debug.Log(_counter);
         _image.color = assistColors[_counter];
         _text = "" + _counter;
         _button.GetComponentInChildren<TMP_Text>().text = _text;
