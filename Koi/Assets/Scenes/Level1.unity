@@ -143,10 +143,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 5201725545546167567, guid: e49005f93492d7e4590dc6e35885518c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8498125347185348920, guid: e49005f93492d7e4590dc6e35885518c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -208,6 +204,7 @@ GameObject:
   - component: {fileID: 706566090}
   - component: {fileID: 706566089}
   - component: {fileID: 706566088}
+  - component: {fileID: 706566091}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -265,6 +262,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &706566091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706566087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2ad3a116af87a4d8a579b9df11b4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1397867054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -461,6 +470,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 3680603929576458526, guid: 96d5d1b272427de4cb8798d12d6ce20e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8510279315688113690, guid: 96d5d1b272427de4cb8798d12d6ce20e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -575,19 +588,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 655558407854340125, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1936917463179833696}
-    - target: {fileID: 655558407854340125, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3765524714430378308, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
       propertyPath: m_Name
       value: ScreenSpaceCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5992951916285784775, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
+    - target: {fileID: 3765524714430378308, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -671,35 +676,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7585505956410727148, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
-      propertyPath: m_TagString
-      value: PauseAssist
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1993091205653816715, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1936917463179833696}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
---- !u!1 &1936917463179833695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1993091205653816715, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
-  m_PrefabInstance: {fileID: 1936917463179833694}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1936917463179833696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936917463179833695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 898b903a42f2a794a8889eef980004ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

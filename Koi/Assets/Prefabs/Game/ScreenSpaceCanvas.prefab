@@ -843,6 +843,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3361065334301811728, guid: 2892152696825534a860c99353c4dfc3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 655558407854340125}
+    - targetCorrespondingSourceObject: {fileID: 3361065334301811728, guid: 2892152696825534a860c99353c4dfc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3036336055915405874}
   m_SourcePrefab: {fileID: 100100000, guid: 2892152696825534a860c99353c4dfc3, type: 3}
 --- !u!224 &1652058215813426739 stripped
 RectTransform:
@@ -898,9 +901,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6448386029891189336, guid: e96484ef9cfad1e4981fcea3088cd457, type: 3}
+      - m_Target: {fileID: 3036336055915405874}
         m_TargetAssemblyTypeName: Gamestates, Assembly-CSharp
-        m_MethodName: InvokePause
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -910,6 +913,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3036336055915405874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993091205653816715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898b903a42f2a794a8889eef980004ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5340429717028717777 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9156102201900057930, guid: 2892152696825534a860c99353c4dfc3, type: 3}
@@ -1024,6 +1039,10 @@ PrefabInstance:
     - target: {fileID: 3346293994439376309, guid: c67be3b478b238746a00ea23b7308102, type: 3}
       propertyPath: m_Name
       value: Assist level button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346293994439376309, guid: c67be3b478b238746a00ea23b7308102, type: 3}
+      propertyPath: m_TagString
+      value: PauseAssist
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
