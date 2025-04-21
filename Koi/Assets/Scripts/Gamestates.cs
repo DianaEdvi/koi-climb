@@ -33,12 +33,10 @@ public class Gamestates : MonoBehaviour
     
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("lookinh for panel");
         pausePanel = GameObject.Find("PausePanel");
 
         if (pausePanel != null)
         {
-            Debug.Log("panel is null");
             pausePanel.SetActive(false);
         }
     }
@@ -89,10 +87,6 @@ public class Gamestates : MonoBehaviour
             if (obj.name == "PauseButton")
             {
                 _pauseButton = obj.GetComponent<Button>();
-                // _pauseButton.onClick.AddListener(() =>
-                // {
-                //     _events.onPause?.Invoke();
-                // });
             }
             else if (obj.name == "PausePanel")
             {
@@ -107,6 +101,7 @@ public class Gamestates : MonoBehaviour
 
     private void Pause()
     {
+        Debug.Log("invoked");
         if (pausePanel != null)
         {
             pausePanel.SetActive(!pausePanel.activeSelf);

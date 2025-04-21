@@ -30,6 +30,7 @@ public class Inputs : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("pressed esc");
             _events.onPause?.Invoke();
         }
         
