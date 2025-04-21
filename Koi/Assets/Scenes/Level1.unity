@@ -592,10 +592,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenSpaceCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3765524714430378308, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7269874082369832310, guid: 59af81e1cb466bf44b994e5b6f727098, type: 3}
       propertyPath: m_Pivot.x
       value: 0
