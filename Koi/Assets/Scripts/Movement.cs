@@ -30,6 +30,14 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            _movePlayer = true;
+        }
+        else
+        {
+            _movePlayer = false;
+        }
         // Set variables 
         _position = transform;
         _origin = new Vector3(0,0,0);
