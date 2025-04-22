@@ -22,8 +22,10 @@ public class Movement : MonoBehaviour
     private Player _player; // general properties for both koi 
     // private int _rotation = 0;
     [SerializeField] private string creatureType;
-    private bool _movePlayer = true;
+    private bool _movePlayer;
     private Events _events;
+
+    private string _sceneName;
     
     // Start is called before the first frame update
     void Start()
@@ -37,11 +39,18 @@ public class Movement : MonoBehaviour
         if (gameObj != null)
         {
             _events = gameObj.GetComponent<Events>();
-            _events.onStartLevel.AddListener((() => _movePlayer = true));
+            // _events.onStartLevel.AddListener((() => _movePlayer = true));
             _events.onEndLevel.AddListener((() => _movePlayer = false));
             _events.onRespawnPlayer.AddListener(ResetPosition);
             _events.onPause.AddListener(() => _movePlayer = !_movePlayer);
         }
+
+        _sceneName = SceneManager.GetActiveScene().name;
+    }
+
+    private void Update()
+    {
+        LevelRequirements(_sceneName);
     }
 
     private void FixedUpdate()
@@ -97,5 +106,34 @@ public class Movement : MonoBehaviour
         transform.rotation = Quaternion.Euler(startRotation);
         transform.localPosition = startPosition;
         _angle = startAngle;
+    }
+
+    private void LevelRequirements(string sceneName)
+    {
+        switch (sceneName)
+        {
+            case "Level1":
+                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                {
+                    _movePlayer = true;
+                }
+                break;
+            case "Level2":
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    _movePlayer = true;
+                }
+                break;
+            case "Level3":
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    _movePlayer = true;
+                }
+                break;
+                default:
+                    return;
+                
+            
+        }
     }
 }

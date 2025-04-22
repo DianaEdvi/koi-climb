@@ -36,14 +36,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        // if (_respawnMarker != null)
-        // {
-        //     _respawnMarker.transform.position = new Vector3(0,respawnPoint.y, 0);
-        // }
-    }
-
     public float RiseSpeed
     {
         get => riseSpeed;

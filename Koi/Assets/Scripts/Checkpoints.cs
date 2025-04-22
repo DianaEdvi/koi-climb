@@ -67,10 +67,10 @@ public class Checkpoints : MonoBehaviour
         {
             Debug.Log("cpl " + _checkPoints.Length);
             Debug.Log("nbr " + _numberOfCheckpoints);
-            if (_currentCheckPoint.transform.position.y > _checkPoints[_numberOfCheckpoints].transform.position.y)
-            {
-                _currentCheckPoint.transform.position = _checkPoints[_numberOfCheckpoints].transform.position;
-            }
+            // if (_currentCheckPoint.transform.position.y > _checkPoints[_numberOfCheckpoints].transform.position.y)
+            // {
+            //     _currentCheckPoint.transform.position = _checkPoints[_numberOfCheckpoints].transform.position;
+            // }
             _player.RespawnPoint = new Vector3(0, _currentCheckPoint.transform.position.y, 0);
             _respawnMarker.transform.position = new Vector3(0, _currentCheckPoint.transform.position.y + 10.5f, 0);
 
