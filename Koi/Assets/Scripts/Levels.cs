@@ -12,6 +12,8 @@ public class Levels : MonoBehaviour
     private Events _events;
     [SerializeField] private int[] values;
 
+    public int[] Values => values;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += UpdateAssistLevels;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**
  * Handles all the inputs 
@@ -8,9 +9,7 @@ using UnityEngine;
 public class Inputs : MonoBehaviour
 {
     private Player _player;
-    private ExplodeTheSun _explodeTheSun;
     private Events _events;
-    // [SerializeField] private GameObject dragon;
     private Spawner _spawner;
     
     // Start is called before the first frame update
@@ -18,9 +17,6 @@ public class Inputs : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _events = GameObject.Find("Game").GetComponent<Events>();
-        _explodeTheSun = GameObject.Find("Game").GetComponent<ExplodeTheSun>();
-        // _spawner = dragon.GetComponentInChildren<Spawner>();
-
     }
 
     // Update is called once per frame
@@ -60,21 +56,7 @@ public class Inputs : MonoBehaviour
         // Space is for the dragon stuff 
         if (Input.GetKeyDown(KeyCode.Space)) // i think this needs to be changed to false right after the space in order to allow for future space presses for fireballs
         {
-            // // first check if dragon is already active before firing
-            // if (dragon.activeSelf)
-            // {
-            //     _spawner.Launch = true;
-            //     // Debug.Log("shoot fireballs");
-            // }
             
-            // activate dragon
-            if (_explodeTheSun.ReadyToExplode)
-            {
-                if (_events != null && _events.onDragonTime != null)
-                {
-                  _events.onDragonTime?.Invoke();   
-                }
-            }
         }
     }
 

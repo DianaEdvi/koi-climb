@@ -35,14 +35,12 @@ public class Triggers : MonoBehaviour
         // if it's an obstacle, reset to the beginning of the level 
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("collided with obstacle");
             if (gameObject.CompareTag("Fireball"))
             {
                 // other.gameObject.SetActive(false);
             }
             else if (_events != null && _events.onHit != null)
             {
-                Debug.Log("onhit");
                 _events.onHit?.Invoke(other.gameObject.tag);
             }
         }
