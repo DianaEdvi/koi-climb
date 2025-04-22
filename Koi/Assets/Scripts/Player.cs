@@ -38,10 +38,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (_respawnMarker != null)
-        {
-            _respawnMarker.transform.position = new Vector3(0,respawnPoint.y, 0);
-        }
+        // if (_respawnMarker != null)
+        // {
+        //     _respawnMarker.transform.position = new Vector3(0,respawnPoint.y, 0);
+        // }
     }
 
     public float RiseSpeed
@@ -92,6 +92,6 @@ public class Player : MonoBehaviour
     {
         transform.position = spawnPoint;
         respawnPoint = spawnPoint;
-        _respawnMarker.transform.position = new Vector3(0, spawnPoint.y + 5f, 0);
+        _respawnMarker.transform.position = new Vector3(0, spawnPoint.y + 10.5f, 0);
     }
 }

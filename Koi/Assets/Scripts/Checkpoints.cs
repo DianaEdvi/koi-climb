@@ -10,7 +10,7 @@ public class Checkpoints : MonoBehaviour
     private Events _events;
     private bool _swapCheckPoint;
     private GameObject _currentCheckPoint;
-    private int _numberOfCheckpoints;
+    private int _numberOfCheckpoints;    private GameObject _respawnMarker;
     
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,12 @@ public class Checkpoints : MonoBehaviour
         
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _events = GameObject.Find("Game").GetComponent<Events>();
+        
+        GameObject rspwn = GameObject.Find("Respawn marker");
+        if (rspwn != null)
+        {
+            _respawnMarker = rspwn;
+        }
     }
 
     // Update is called once per frame
@@ -45,6 +51,8 @@ public class Checkpoints : MonoBehaviour
         if (_swapCheckPoint)
         {
             _player.RespawnPoint = new Vector3(0, _currentCheckPoint.transform.position.y, 0);
+            _respawnMarker.transform.position = new Vector3(0, _currentCheckPoint.transform.position.y + 10.5f, 0);
+
             _swapCheckPoint = false;
         }
     }

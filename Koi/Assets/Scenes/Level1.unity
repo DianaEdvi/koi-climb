@@ -134,41 +134,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Respawn marker
       objectReference: {fileID: 0}
-    - target: {fileID: 2901053558309011321, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 309d8157fa2f7764c885605d5f36f1e6, type: 3}
-    - target: {fileID: 2901053558309011321, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2901053558309011321, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2901053558309011321, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2901053558309011321, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709912768715374740, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.648139
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709912768715374740, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.3
-      objectReference: {fileID: 0}
     - target: {fileID: 8709912768715374740, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0736
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8709912768715374740, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.6
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 8709912768715374740, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -205,10 +177,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2014549376046825951, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1643612791}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
 --- !u!1 &464280922
 GameObject:
@@ -1365,32 +1334,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1643612790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2014549376046825951, guid: 4ebf63aa338407545b3e9c772dd991d4, type: 3}
-  m_PrefabInstance: {fileID: 273434534}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1643612791
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643612790}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 56c5f1ab9e9046c408205f07363f6608, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1672648915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,18 +1670,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 806973585115179982, guid: 692cf8efd30893a4587b0409fbbc84e0, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1028399142991218975, guid: 692cf8efd30893a4587b0409fbbc84e0, type: 3}
       propertyPath: bounds
       value: 
       objectReference: {fileID: 477668344}
-    - target: {fileID: 2733182763476891587, guid: 692cf8efd30893a4587b0409fbbc84e0, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4201888586104193778, guid: 692cf8efd30893a4587b0409fbbc84e0, type: 3}
       propertyPath: m_Name
       value: Player
