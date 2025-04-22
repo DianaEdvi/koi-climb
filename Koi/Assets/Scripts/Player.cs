@@ -92,6 +92,6 @@ public class Player : MonoBehaviour
     {
         transform.position = spawnPoint;
         respawnPoint = spawnPoint;
-        _respawnMarker.transform.position = new Vector3(0, spawnPoint.y, 0);
+        _respawnMarker.transform.position = new Vector3(0, spawnPoint.y + 5f, 0);
     }
 }
