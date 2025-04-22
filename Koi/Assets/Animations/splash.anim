@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: waterfall
+  m_Name: splash
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 4d5f52fb3e0d8e64c8cadcb20696a67a, type: 3}
+      value: {fileID: 21300000, guid: 309d8157fa2f7764c885605d5f36f1e6, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 0d754131d2fc9dd49a66b3991e9bb4c5, type: 3}
+      value: {fileID: 21300000, guid: 1e5e1c3889b4ced458bb8fc9c1689fe0, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: cef1decb9fdc914498cd0e9f8acb9ab2, type: 3}
+      value: {fileID: 21300000, guid: e1231b2c6513de947ad3d4af20e7618b, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 7db58579703380a488aa34c881a332b9, type: 3}
+      value: {fileID: 21300000, guid: abd3534a168402c4eadadac8cc85721d, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 4d5f52fb3e0d8e64c8cadcb20696a67a, type: 3}
-    - {fileID: 21300000, guid: 0d754131d2fc9dd49a66b3991e9bb4c5, type: 3}
-    - {fileID: 21300000, guid: cef1decb9fdc914498cd0e9f8acb9ab2, type: 3}
-    - {fileID: 21300000, guid: 7db58579703380a488aa34c881a332b9, type: 3}
+    - {fileID: 21300000, guid: 309d8157fa2f7764c885605d5f36f1e6, type: 3}
+    - {fileID: 21300000, guid: 1e5e1c3889b4ced458bb8fc9c1689fe0, type: 3}
+    - {fileID: 21300000, guid: e1231b2c6513de947ad3d4af20e7618b, type: 3}
+    - {fileID: 21300000, guid: abd3534a168402c4eadadac8cc85721d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

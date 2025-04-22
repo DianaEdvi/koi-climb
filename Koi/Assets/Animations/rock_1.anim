@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: waterfall
+  m_Name: rock_1
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 4d5f52fb3e0d8e64c8cadcb20696a67a, type: 3}
+      value: {fileID: 21300000, guid: 29df436758c7cd9498051b860dc86358, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 0d754131d2fc9dd49a66b3991e9bb4c5, type: 3}
+      value: {fileID: 21300000, guid: f85ba63db55537c4292c58b9b44e6c73, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: cef1decb9fdc914498cd0e9f8acb9ab2, type: 3}
+      value: {fileID: 21300000, guid: 346dece05dbf2dc4cafdadcc23bb892e, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 7db58579703380a488aa34c881a332b9, type: 3}
+      value: {fileID: 21300000, guid: 3f6e56f54c2d965448b95ea0a64093ec, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 4d5f52fb3e0d8e64c8cadcb20696a67a, type: 3}
-    - {fileID: 21300000, guid: 0d754131d2fc9dd49a66b3991e9bb4c5, type: 3}
-    - {fileID: 21300000, guid: cef1decb9fdc914498cd0e9f8acb9ab2, type: 3}
-    - {fileID: 21300000, guid: 7db58579703380a488aa34c881a332b9, type: 3}
+    - {fileID: 21300000, guid: 29df436758c7cd9498051b860dc86358, type: 3}
+    - {fileID: 21300000, guid: f85ba63db55537c4292c58b9b44e6c73, type: 3}
+    - {fileID: 21300000, guid: 346dece05dbf2dc4cafdadcc23bb892e, type: 3}
+    - {fileID: 21300000, guid: 3f6e56f54c2d965448b95ea0a64093ec, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
