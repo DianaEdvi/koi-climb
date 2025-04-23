@@ -16,16 +16,13 @@ public class Movement : MonoBehaviour
     private float _angle; // the current angle around the circle 
     [SerializeField] private float startAngle; // the start angle
     [SerializeField] private Vector3 startPosition;
-
     [SerializeField] private Vector3 startRotation;
-    // [SerializeField] private float startRotation; // the start angle
     private Player _player; // general properties for both koi 
-    // private int _rotation = 0;
     [SerializeField] private string creatureType;
     private bool _movePlayer;
     private Events _events;
-
     private string _sceneName;
+    private float _startRadius;
     
     // Start is called before the first frame update
     void Start()
@@ -54,6 +51,7 @@ public class Movement : MonoBehaviour
         }
 
         _sceneName = SceneManager.GetActiveScene().name;
+        _startRadius = _player.Radius;
     }
 
     private void Update()
@@ -90,6 +88,15 @@ public class Movement : MonoBehaviour
         {
             case "Koi":
                 // Move around in circle 
+                // if (_player.Expanding)
+                // {
+                //     _player.Radius = Mathf.Lerp(_startRadius, _player.DoubleRadius, 0.05f);
+                // }
+                // else
+                // {
+                //     if (Mathf.Approximately(_player.Radius, _startRadius)) return;
+                //     _player.Radius = Mathf.Lerp(_player.DoubleRadius, _startRadius, 0.05f);
+                // }
                 _position.localPosition = new Vector3(_origin.x + _player.Radius * Mathf.Cos(_angle), _origin.y + _player.Radius * Mathf.Sin(_angle), 0);
         
                 // Apply spin on Z rotation to stay aligned with the circle 

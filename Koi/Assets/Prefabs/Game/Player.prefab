@@ -562,6 +562,9 @@ MonoBehaviour:
   spinSpeed: 0.02
   directionSpeed: 0.05
   radius: 2
+  doubleSpeed: 0.1
+  doubleSpinSpeed: 0.06
+  doubleRadius: 4
   respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &1028399142991218975
 MonoBehaviour:
