@@ -133,6 +133,13 @@ public class Movement : MonoBehaviour
                 }
                 break;
             case "Level3":
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) 
+                    || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                {
+                    _movePlayer = true;
+                }
+                break;
+            case "Level4":
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     _movePlayer = true;
