@@ -23,6 +23,7 @@ public class Helper : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+            Debug.Log("click");
             foreach (var k in koi)
             {
                 Instantiate(collectiblePrefab, k.transform.position, k.transform.rotation);

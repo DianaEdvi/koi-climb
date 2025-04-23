@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startAngle: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 2, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 200}
   creatureType: Koi
 --- !u!114 &1388664047405902117
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startAngle: 3.141593
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: -2, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 20}
   creatureType: Koi
 --- !u!114 &7427539148993613388
