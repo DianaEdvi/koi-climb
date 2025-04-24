@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4439069351815592576}
   - component: {fileID: 5860866149364188325}
   - component: {fileID: 6377859509042094175}
+  - component: {fileID: 5414359782319946864}
   m_Layer: 0
   m_Name: Shrimp
   m_TagString: Collectible
@@ -219,3 +220,15 @@ PolygonCollider2D:
       - {x: -0.14999999, y: -0.775}
       - {x: -0.04, y: -0.585}
   m_UseDelaunayMesh: 0
+--- !u!114 &5414359782319946864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504473197103308475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca3e0a871bea01409595ab6eccf6d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

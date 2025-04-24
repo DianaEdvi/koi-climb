@@ -44,7 +44,6 @@ public class Movement : MonoBehaviour
         if (gameObj != null)
         {
             _events = gameObj.GetComponent<Events>();
-            // _events.onStartLevel.AddListener((() => _movePlayer = true));
             _events.onEndLevel.AddListener((() => _movePlayer = false));
             _events.onRespawnPlayer.AddListener(ResetPosition);
             _events.onPause.AddListener(() => _movePlayer = !_movePlayer);
@@ -87,16 +86,7 @@ public class Movement : MonoBehaviour
         switch (creature)
         {
             case "Koi":
-                // Move around in circle 
-                // if (_player.Expanding)
-                // {
-                //     _player.Radius = Mathf.Lerp(_startRadius, _player.DoubleRadius, 0.05f);
-                // }
-                // else
-                // {
-                //     if (Mathf.Approximately(_player.Radius, _startRadius)) return;
-                //     _player.Radius = Mathf.Lerp(_player.DoubleRadius, _startRadius, 0.05f);
-                // }
+           
                 _position.localPosition = new Vector3(_origin.x + _player.Radius * Mathf.Cos(_angle), _origin.y + _player.Radius * Mathf.Sin(_angle), 0);
         
                 // Apply spin on Z rotation to stay aligned with the circle 
@@ -147,7 +137,7 @@ public class Movement : MonoBehaviour
                 }
                 break;
             case "Level4":
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     _movePlayer = true;
                 }
