@@ -23,7 +23,13 @@ public class Movement : MonoBehaviour
     private Events _events;
     private string _sceneName;
     private float _startRadius;
-    
+
+    public bool MovePlayer
+    {
+        get => _movePlayer;
+        set => _movePlayer = value;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +52,7 @@ public class Movement : MonoBehaviour
             _events = gameObj.GetComponent<Events>();
             _events.onEndLevel.AddListener((() => _movePlayer = false));
             _events.onRespawnPlayer.AddListener(ResetPosition);
-            _events.onPause.AddListener(() => _movePlayer = !_movePlayer);
+            _events.onPause.AddListener(() => _movePlayer = false);
         }
 
         _sceneName = SceneManager.GetActiveScene().name;

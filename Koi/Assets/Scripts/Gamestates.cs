@@ -15,7 +15,6 @@ public class Gamestates : MonoBehaviour
 
     private Button _pauseButton;
     [SerializeField] private GameObject pausePanel;
-
     private void Awake()
     {
         if (_instance == null)
@@ -101,7 +100,6 @@ public class Gamestates : MonoBehaviour
 
     private void Pause()
     {
-        Debug.Log("invoked");
         if (pausePanel != null)
         {
             pausePanel.SetActive(!pausePanel.activeSelf);
