@@ -142,6 +142,15 @@ public class Movement : MonoBehaviour
                     _movePlayer = true;
                 }
                 break;
+            case "Level5":
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || 
+                    Input.GetKeyDown(KeyCode.RightArrow) || 
+                    Input.GetKeyDown(KeyCode.A) || 
+                    Input.GetKeyDown(KeyCode.D) ||
+                    Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    _movePlayer = true;
+                }                break;
                 default:
                     return;
                 
