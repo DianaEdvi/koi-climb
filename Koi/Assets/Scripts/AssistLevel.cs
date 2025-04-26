@@ -40,7 +40,7 @@ public class AssistLevel : MonoBehaviour
         assistColors[0] = new Color(1f, 200f / 255f, 200f / 255f);
         assistColors[1] = new Color(250f / 255f, 150f / 255f, 150f / 255f);
         assistColors[2] = new Color(245f / 255f, 100f / 255f, 100f / 255f);
-        assistColors[3] = new Color(240f / 255f, 50f / 255f, 50f / 255f);
+        // assistColors[3] = new Color(240f / 255f, 50f / 255f, 50f / 255f);
         
         _button.onClick.AddListener(SetAssistLevel);
         UpdateButtonUI();
@@ -50,7 +50,7 @@ public class AssistLevel : MonoBehaviour
     {
         _counter++;
 
-        if (_counter == 4)
+        if (_counter == 3)
         {
             _counter = 0;
         }
