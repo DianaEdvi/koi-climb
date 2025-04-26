@@ -8,18 +8,19 @@ public class ShrimpTracker : MonoBehaviour
 {
     [SerializeField] private ShrimpCounter[] _shrimpCounters;
     private GameObject[] _shrimps;
+    private TMP_Text _panelShrimpText;
 
     private Events _events;
     
     private void OnEnable()
     {
-        SceneManager.sceneLoaded += CountShrimp;
+        SceneManager.sceneLoaded += CountTotalShrimp;
         SceneManager.sceneLoaded += FindText;
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded -= CountShrimp;
+        SceneManager.sceneLoaded -= CountTotalShrimp;
         SceneManager.sceneLoaded -= FindText;
     }
     
@@ -29,7 +30,6 @@ public class ShrimpTracker : MonoBehaviour
         _events = GameObject.Find("Game").GetComponent<Events>();
         _events.onHit.AddListener(CountShrimp);
         _events.onRespawnPlayer.AddListener(ResetCounter);
-
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class ShrimpTracker : MonoBehaviour
         
     }
 
-    private void CountShrimp(Scene scene, LoadSceneMode loadSceneMode)
+    private void CountTotalShrimp(Scene scene, LoadSceneMode loadSceneMode)
     {
         _shrimps = GameObject.FindGameObjectsWithTag("Collectible");
 
@@ -99,6 +99,15 @@ public class ShrimpTracker : MonoBehaviour
                 }
             }
         }
-        
+
+        foreach (var shrimpCounter in _shrimpCounters)
+        {
+            if (SceneManager.GetActiveScene().name == shrimpCounter.LevelName)
+            {
+                var panel = GameObject.FindGameObjectWithTag("EndPanel");
+                panel.SetActive(false);
+            }
+        }
     }
+    
 }

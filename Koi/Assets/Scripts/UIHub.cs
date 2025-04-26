@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,7 +9,15 @@ using UnityEngine.UI;
 public class UIHub : MonoBehaviour
 {
     private Events _events;
-    [SerializeField] private Canvas canvas;
+    [SerializeField] private GameObject endPanel;
+
+    private TMP_Text _text;
+
+    private void Awake()
+    {
+        endPanel = GameObject.FindGameObjectWithTag("EndPanel");
+    }
+
     void Start()
     {
         GameObject gameObj = GameObject.Find("Game");
@@ -24,6 +33,6 @@ public class UIHub : MonoBehaviour
 
     private void ReactivateUI()
     {
-        canvas.gameObject.SetActive(true);
+        endPanel.gameObject.SetActive(true);
     }
 }

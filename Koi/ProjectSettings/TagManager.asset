@@ -13,6 +13,7 @@ TagManager:
   - PauseAssist
   - Koi
   - ShrimpText
+  - EndPanel
   layers:
   - Default
   - TransparentFX

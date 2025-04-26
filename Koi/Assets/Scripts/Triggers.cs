@@ -62,6 +62,7 @@ public class Triggers : MonoBehaviour
         if (other.gameObject.CompareTag("EndOfLevel"))
         {
             _events.onEndLevel?.Invoke();
+            _events.onPause?.Invoke();
             var koi = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             koi.RespawnPoint = new Vector3(0, 0, 0);
             _events.onRespawnPlayer?.Invoke(koi.RespawnPoint);
