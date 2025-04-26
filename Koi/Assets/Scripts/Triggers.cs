@@ -31,6 +31,7 @@ public class Triggers : MonoBehaviour
                 _events.onHit?.Invoke(other.gameObject.tag); 
             }
             var aud = other.GetComponent<AudioSource>();
+                
                 aud.Play();
                 
                 var sr = other.GetComponent<SpriteRenderer>();
