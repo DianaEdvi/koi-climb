@@ -351,13 +351,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: "To You,\n\nI hope you had a good time in this little corner of the internet.
     Please feel free to provide any feedback or recommendations for improving. I
-    am here to learn. \n\nNameless Koi Game was inspired by my trip to Japan. I am
-    currently studying here and am feeling very blessed to be able to be surrounded
-    with such a rich, beautiful culture. \n\nThis was my first time creating a game
-    completely on my own. All of the gameplay and assets you saw in the game were
-    created solely by me. I learned a lot on this journey and am planning on applying
-    the lessons I gained in future projects. \n\nThank you for playing. See you out
-    there.\n\n- Vin"
+    am here to learn. \n\nKoi Climb was inspired by my trip to Japan. I feel very
+    blessed to be able to experience such a rich, beautiful culture. I did my best
+    to transfer some of that beauty into this game, to take some of it back with
+    me.  \n\nThis was my first time creating a game completely on my own. All of
+    the gameplay and assets you saw were created solely by me. I learned a lot on
+    this journey and am planning on applying the lessons I gained in future projects.
+    \n\nThank you for playing. See you out there.\n\n- Vin"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 12b4cb6f7be15084d82535ec85c6d866, type: 2}
   m_sharedMaterial: {fileID: -3522433602361100562, guid: 12b4cb6f7be15084d82535ec85c6d866, type: 2}
