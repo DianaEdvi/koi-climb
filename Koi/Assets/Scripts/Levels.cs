@@ -103,6 +103,7 @@ public class Levels : MonoBehaviour
                     }
                     // set the level objects and assign their current values
                     _parents[i] = levelObject;
+                    Debug.Log(_parents[i].gameObject.name);
                     _parents[i].GetComponentInChildren<AssistLevel>().Counter = values[i];
 
                 }
