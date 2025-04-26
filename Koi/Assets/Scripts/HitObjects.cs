@@ -65,6 +65,14 @@ public class HitObjects : MonoBehaviour
         foreach (var collectible in _collectibles)
         {
             collectible.gameObject.SetActive(true);
+            
+            var sr = collectible.GetComponent<SpriteRenderer>();
+            var color = sr.color;
+            color.a = 1f; // 0 = fully transparent
+            sr.color = color;
+
+            var col = collectible.GetComponent<Collider2D>();
+            col.enabled = true;
         }
     }
 

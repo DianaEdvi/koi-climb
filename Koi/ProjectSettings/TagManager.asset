@@ -11,6 +11,7 @@ TagManager:
   - Checkpoint
   - Pause
   - PauseAssist
+  - Koi
   layers:
   - Default
   - TransparentFX

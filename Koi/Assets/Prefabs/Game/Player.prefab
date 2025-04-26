@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 8146458291811143033}
   m_Layer: 0
   m_Name: White koi
-  m_TagString: Untagged
+  m_TagString: Koi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 3418029248143893450}
   m_Layer: 0
   m_Name: Black koi
-  m_TagString: Untagged
+  m_TagString: Koi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

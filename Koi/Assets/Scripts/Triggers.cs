@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /**
@@ -29,12 +30,24 @@ public class Triggers : MonoBehaviour
             {
                 _events.onHit?.Invoke(other.gameObject.tag); 
             }
-            other.gameObject.SetActive(false);
+            var aud = other.GetComponent<AudioSource>();
+                aud.Play();
+                
+                var sr = other.GetComponent<SpriteRenderer>();
+                var color = sr.color;
+                color.a = 0f; // 0 = fully transparent
+                sr.color = color;
+
+                var col = other.GetComponent<Collider2D>();
+                col.enabled = false;
+
+
         }
 
         // if it's an obstacle, reset to the beginning of the level 
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            other.GetComponent<AudioSource>().Play();
             if (gameObject.CompareTag("Fireball"))
             {
                 // other.gameObject.SetActive(false);
@@ -54,6 +67,13 @@ public class Triggers : MonoBehaviour
             _events.onRespawnPlayer?.Invoke(koi.RespawnPoint);
             Debug.Log("level ended");
         }
+    }
+
+    IEnumerator Wait(GameObject other)
+    {
+        yield return new WaitForSeconds(0.5f);
+        other.gameObject.SetActive(false);
+
     }
 
 
