@@ -12,6 +12,7 @@ TagManager:
   - Pause
   - PauseAssist
   - Koi
+  - ShrimpText
   layers:
   - Default
   - TransparentFX

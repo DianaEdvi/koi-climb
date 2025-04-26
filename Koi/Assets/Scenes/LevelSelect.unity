@@ -2908,6 +2908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1922588980}
   - component: {fileID: 1922588979}
+  - component: {fileID: 1922588981}
   m_Layer: 0
   m_Name: Levels
   m_TagString: Untagged
@@ -2944,6 +2945,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922588981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922588978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7497d1a56a1b7f94bb43fa3bdbc3c58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shrimpCounters:
+  - levelName: Level1
+    text: {fileID: 0}
+    totalShrimp: 35
+    currentCaught: 0
+    highScore: 0
+  - levelName: Level2
+    text: {fileID: 0}
+    totalShrimp: 42
+    currentCaught: 0
+    highScore: 0
+  - levelName: Level3
+    text: {fileID: 0}
+    totalShrimp: 65
+    currentCaught: 0
+    highScore: 0
+  - levelName: Level4
+    text: {fileID: 0}
+    totalShrimp: 41
+    currentCaught: 0
+    highScore: 0
+  - levelName: Level5
+    text: {fileID: 0}
+    totalShrimp: 65
+    currentCaught: 0
+    highScore: 0
 --- !u!1 &1951019342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,7 +3603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8475220318040546037, guid: e96484ef9cfad1e4981fcea3088cd457, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3584,33 +3623,9 @@ PrefabInstance:
       value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 2500197816695507735, guid: d946eb27813955f4699d901918d7e62f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2500197816695507735, guid: d946eb27813955f4699d901918d7e62f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2500197816695507735, guid: d946eb27813955f4699d901918d7e62f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 227487579}
-    - target: {fileID: 2500197816695507735, guid: d946eb27813955f4699d901918d7e62f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2500197816695507735, guid: d946eb27813955f4699d901918d7e62f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 2500197816695507735, guid: d946eb27813955f4699d901918d7e62f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2500197816695507735, guid: d946eb27813955f4699d901918d7e62f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4169977159754393483, guid: d946eb27813955f4699d901918d7e62f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

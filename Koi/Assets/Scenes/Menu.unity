@@ -868,11 +868,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d946eb27813955f4699d901918d7e62f, type: 3}
---- !u!82 &1613615091 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 9003308658713414899, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
-  m_PrefabInstance: {fileID: 3763448901884535388}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1653725591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,10 +1398,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2014678865364971824, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 2884853111503364673, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1303.1023
@@ -1450,26 +1441,6 @@ PrefabInstance:
     - target: {fileID: 3180729440035557234, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
       propertyPath: m_Name
       value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736647652147445099, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
-      propertyPath: music
-      value: 
-      objectReference: {fileID: 1613615091}
-    - target: {fileID: 9003308658713414899, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
-      propertyPath: Mute
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003308658713414899, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
-      propertyPath: m_Volume
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003308658713414899, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003308658713414899, guid: 691abc164a31d364b9bc088ea7470827, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
